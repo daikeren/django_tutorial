@@ -1,0 +1,5 @@
+node_modules
+.grunt
+/_book/
+*.sublime-project
+*.sublime-workspace
