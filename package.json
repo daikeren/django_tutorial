@@ -1,0 +1,21 @@
+{
+    "name": "Django Tutorial",
+    "version": "0.1.1",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/daikeren/django_tutorial.git"
+    },
+    "author": "Andy Dai <andy@dorm7.com>",
+    "license": "Apache 2",
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-gitbook": "0.4.2",
+        "grunt-gh-pages": "0.9.1",
+        "grunt-contrib-clean": "~0.5.0"
+    },
+    "peerDependencies": {
+        "grunt": "~0.4.1"
+    }
+}
