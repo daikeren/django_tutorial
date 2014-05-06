@@ -9,7 +9,7 @@ module.exports = function (grunt) {
         'gitbook': {
             development: {
                 input: "./",
-                github: "GitbookIO/javascript"
+                github: "daikeren/django_tutorial"
             }
         },
         'gh-pages': {

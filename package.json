@@ -1,12 +1,12 @@
 {
-    "name": "Javascript",
+    "name": "Django Tutorial",
     "version": "0.1.1",
     "description": "",
     "repository": {
         "type": "git",
-        "url": "https://github.com/GitbookIO/javascript.git"
+        "url": "https://github.com/daikeren/django_tutorial.git"
     },
-    "author": "Samy Pesse <samypesse@gmail.com>",
+    "author": "Andy Dai <andy@dorm7.com>",
     "license": "Apache 2",
     "dependencies": {},
     "devDependencies": {
