@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1399797800102
+# Revision 1399800121384
 
 CACHE:
 installation/README.html
@@ -12,6 +12,7 @@ intro/README.html
 models/README.html
 project/README.html
 remark/README.html
+template/README.html
 third_party_app/README.html
 views_and_urls/README.html
 views_revisited/README.html

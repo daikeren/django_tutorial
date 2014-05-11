@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="3" data-basepath=".." data-revision="1399797800101">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="3" data-basepath=".." data-revision="1399800121383">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -205,9 +205,11 @@
                 
             </li>
         
-            <li  data-level="9" >
+            <li  data-level="9" data-path="template/README.html">
                 
-                <span><b>9.</b> Django Template</span>
+                <a href="../template/README.html">
+                    <i class="fa fa-check"></i> <b>9.</b> Django Template
+                </a>
                 
                 
             </li>
@@ -263,35 +265,37 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 58.333333333333336%;min-width: 50%;"></div>
+        <div class="inner" style="width: 53.84615384615385%;min-width: 46.15384615384615%;"></div>
     </div>
     <div class="chapters">
     
         <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
     
-        <a href="../intro/README.html" title="Django 簡介" class="chapter done new-chapter" data-progress="1" style="left: 8.333333333333334%;"></a>
+        <a href="../intro/README.html" title="Django 簡介" class="chapter done new-chapter" data-progress="1" style="left: 7.6923076923076925%;"></a>
     
-        <a href="../forms/README.html" title="Django Forms" class="chapter done " data-progress="10" style="left: 16.666666666666668%;"></a>
+        <a href="../forms/README.html" title="Django Forms" class="chapter done " data-progress="10" style="left: 15.384615384615385%;"></a>
     
-        <a href="../third_party_app/README.html" title="Django 的第三方套件們" class="chapter done " data-progress="11" style="left: 25%;"></a>
+        <a href="../third_party_app/README.html" title="Django 的第三方套件們" class="chapter done " data-progress="11" style="left: 23.076923076923077%;"></a>
     
-        <a href="../deploy_to_cloud/README.html" title="把你的 Django Project 丟上雲端" class="chapter done " data-progress="12" style="left: 33.333333333333336%;"></a>
+        <a href="../deploy_to_cloud/README.html" title="把你的 Django Project 丟上雲端" class="chapter done " data-progress="12" style="left: 30.76923076923077%;"></a>
     
-        <a href="../remark/README.html" title="這只是開始..." class="chapter done " data-progress="13" style="left: 41.666666666666664%;"></a>
+        <a href="../remark/README.html" title="這只是開始..." class="chapter done " data-progress="13" style="left: 38.46153846153846%;"></a>
     
-        <a href="../installation/README.html" title="安裝 Django" class="chapter done new-chapter" data-progress="2" style="left: 50%;"></a>
+        <a href="../installation/README.html" title="安裝 Django" class="chapter done new-chapter" data-progress="2" style="left: 46.15384615384615%;"></a>
     
-        <a href="../project/README.html" title="Django Project" class="chapter done new-chapter" data-progress="3" style="left: 58.333333333333336%;"></a>
+        <a href="../project/README.html" title="Django Project" class="chapter done new-chapter" data-progress="3" style="left: 53.84615384615385%;"></a>
     
-        <a href="../apps/README.html" title="Django APPs" class="chapter  new-chapter" data-progress="4" style="left: 66.66666666666667%;"></a>
+        <a href="../apps/README.html" title="Django APPs" class="chapter  new-chapter" data-progress="4" style="left: 61.53846153846154%;"></a>
     
-        <a href="../views_and_urls/README.html" title="Django Views &amp; Django URLs" class="chapter  new-chapter" data-progress="5" style="left: 75%;"></a>
+        <a href="../views_and_urls/README.html" title="Django Views &amp; Django URLs" class="chapter  new-chapter" data-progress="5" style="left: 69.23076923076923%;"></a>
     
-        <a href="../models/README.html" title="Django 與資料庫的互動 - Django Model" class="chapter  new-chapter" data-progress="6" style="left: 83.33333333333333%;"></a>
+        <a href="../models/README.html" title="Django 與資料庫的互動 - Django Model" class="chapter  new-chapter" data-progress="6" style="left: 76.92307692307692%;"></a>
     
-        <a href="../admin/README.html" title="Django 最吸引人的 feature 之一 - Django Admin" class="chapter  new-chapter" data-progress="7" style="left: 91.66666666666667%;"></a>
+        <a href="../admin/README.html" title="Django 最吸引人的 feature 之一 - Django Admin" class="chapter  new-chapter" data-progress="7" style="left: 84.61538461538461%;"></a>
     
-        <a href="../views_revisited/README.html" title="Django Views 再訪" class="chapter  new-chapter" data-progress="8" style="left: 100%;"></a>
+        <a href="../views_revisited/README.html" title="Django Views 再訪" class="chapter  new-chapter" data-progress="8" style="left: 92.3076923076923%;"></a>
+    
+        <a href="../template/README.html" title="Django Template" class="chapter  new-chapter" data-progress="9" style="left: 100%;"></a>
     
     </div>
 </div>
@@ -306,14 +310,19 @@
 <pre><code class="lang-bash">django-admin.py startproject blog
 </code></pre>
 <p>就可以看到我們的資料夾多了一個叫做 blog 的目錄，這個目錄當中的檔案如下：</p>
-<pre><code class="lang-bash">- blog
+<pre><code>- blog
   - blog
     - __init__.py
     - settings.py
     - urls.py
     - wsgi.py
   - manage.py
-</code></pre>
+</code></pre><p>在這個階段我們只要注意 manage.py 這個檔案就好。manage.py 是一個 Django 的命令列工具，在 Django 當中許多的工作都必須要透過 manage.py 來完成。接下來我們將執行第一個用 manage.py 的工作，也是開發 Django 中可能是最常跑的指令 - runserver。runserver 的目的是讓 Django 啟動一個簡單用的 web server，讓我們可以很容易的做開發。</p>
+<p>首先先切到 blog 資料夾</p>
+<pre><code>cd blog
+</code></pre><p>接著輸入</p>
+<pre><code>python manage.py runserver
+</code></pre><p>打開你的瀏覽器，在網址的部分輸入 <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> ，應該會看到一個 &quot;Welcome to Django&quot; 的頁面，這就代表你已經成功地創建了你的第一個 Django Project!</p>
 
                     
                     </section>
