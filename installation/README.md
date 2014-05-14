@@ -5,7 +5,9 @@
 ```
 mkdir django_tutorial
 ```
+
 切換到我們剛剛建立的目錄下
+
 ```
 cd django_tutorial
 ```
@@ -30,10 +32,13 @@ sudo apt-get install python-virtualenv
 ```
 virtualenv VENV
 ```
+
 接下來輸入
+
 ```
 source VENV/bin/activate
 ```
+
 就可以啟動 virtualenv，從此只要在 virtualenv 下面安裝的 package 都只會存在于這個 virtualenv 當中。
 
 ## Install Django
