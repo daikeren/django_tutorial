@@ -20,7 +20,7 @@ python manage.py startapp article
   - views.py
 ```
 
-這樣就順利的建起我們第一個 app 的目錄。
+這樣就順利的建起我們第一個 app 的目錄。在接下來的章節我們會來看看其中的檔案，不過現在我們暫時不管他。
 
 接著我們要讓 Django 知道我們有了 article 這個 APP，讓我們打開 blog 資料夾中 settings.py 這個檔案。這個檔案顧名思義就是管理所有跟 Django 相關的設定。找到 settings.py 當中的 INSTALLED_APPS 這個變數，在最下面加上 'article' 就成功的讓 Django 知道會有一個叫做 article 的 APP。
 
