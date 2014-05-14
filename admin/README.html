@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="7" data-basepath=".." data-revision="1400080915029">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="7" data-basepath=".." data-revision="1400086632161">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -305,7 +305,33 @@
                     <section class="normal" id="section-gitbook_3">
                     
                         <h1 id="django-feature-django-admin">Django 最吸引人的 feature 之一 - Django Admin</h1>
-<p>上一個章節我們</p>
+<p>上一個章節我們了解到 Django Model 要怎麼建置，也透過了 Django Shell 來對 Model 做操作，但是常常我們會希望能夠直接有個方便的網頁界面可能對這些 Model 做創造、讀取、更新、刪除的動作，那麼該怎麼辦呢？許多的 web framework 可能都需要手動刻一個這樣的界面，但是 Django 當中有 admin 這個套件來幫你很容易地完成相關的事情。</p>
+<p>首先我們先在 settings.py 當中的 INSTALLED_APPS 當中加入 &#39;django.contrib.admin&#39; 這個 app</p>
+<pre><code class="lang-python">INSTALLED_APPS = (
+...
+    <span class="hljs-comment"># Uncomment the next line to enable the admin:</span>
+    <span class="hljs-string">'django.contrib.admin'</span>,
+...
+)
+</code></pre>
+<p>接著在 blog/urls.py 當中加上</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+admin.autodiscover()
+
+urlpatterns = pattern(<span class="hljs-string">''</span>,
+    ...
+    url(<span class="hljs-string">r'^admin/'</span>, include(admin.site.urls)),
+)
+</code></pre>
+<p>接著造訪 <a href="http://localhost:8000/admin" target="_blank">http://localhost:8000/admin</a> ，使用你在上一章當中創建的 user/password 登入，如果一切順利的話你會看到 Django Admin 的畫面。不過這個時候 Django Admin 還看不到我們建立的 Tag, Article 這兩個 Model，所以我們要告訴 Django Admin 這件事情。</p>
+<p>在 article 目錄底下，新增 admin.py，內容如下：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> article.models <span class="hljs-keyword">import</span> Article, Tag
+
+admin.site.register(Article)
+admin.site.register(Tag)
+</code></pre>
+<p>這時候重新 reload <a href="http://localhost:8000/admin，應該就會看到上面出現" target="_blank">http://localhost:8000/admin，應該就會看到上面出現</a> Article 跟 Tag 的 admin 界面，我們就可以在這邊做創造、讀取、更新、刪除的動作了。</p>
 
                     
                     </section>
