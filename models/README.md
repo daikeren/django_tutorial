@@ -2,7 +2,7 @@
 
 這個章節我們會講到 Django 要如何跟資料庫做互動。
 
-## Settings Database
+## Setting Database
 
 使用 Django 的最大好處之一就是 Django 原生支援許多的資料庫，只要經過簡單的設定，你可以輕鬆從 sqlite 轉換到 MySQL 甚至是 Oracle。為了我們現在開發方便，我們就先用最簡單的 sqlite 吧！
 
@@ -113,3 +113,4 @@ python manage.py shell
 ## 練習
 
 * 除了我們有用到的 all(), create(), filter() 等等方法之外，看看還有什麼 Queryset API 可以玩呢？來玩玩看 delete() 吧。
+* 每個 Article object 除了我們自定的那些欄位之外還有什麼欄位呢？看看 pk 這個欄位吧！
