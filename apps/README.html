@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="4" data-basepath=".." data-revision="1400039270850">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="4" data-basepath=".." data-revision="1400058091967">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -315,7 +315,7 @@
   - models.py
   - tests.py
   - views.py
-</code></pre><p>這樣就順利的建起我們第一個 app 的目錄。</p>
+</code></pre><p>這樣就順利的建起我們第一個 app 的目錄。在接下來的章節我們會來看看其中的檔案，不過現在我們暫時不管他。</p>
 <p>接著我們要讓 Django 知道我們有了 article 這個 APP，讓我們打開 blog 資料夾中 settings.py 這個檔案。這個檔案顧名思義就是管理所有跟 Django 相關的設定。找到 settings.py 當中的 INSTALLED_APPS 這個變數，在最下面加上 &#39;article&#39; 就成功的讓 Django 知道會有一個叫做 article 的 APP。</p>
 <pre><code class="lang-python">INSTALLED_APPS = (
     <span class="hljs-string">'django.contrib.auth'</span>,
