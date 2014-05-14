@@ -71,7 +71,7 @@ Article 這個 Model 跟 Tag Model 很類似，我們有三個屬性，content �
 python manage.py syncdb
 ```
 
-就會完成生成 table 的生成。
+就會完成生成 table 的生成。在這邊，你會看到因為我們在 INSTALLED_APPS 當中有使用 Django 的 auth 系統，因此 Django 會問你是否需要創建 superuser，在這邊你可以輸入一個你喜歡的 username 還有密碼，在下一章節會使用到。
 
 ## 讓我們來玩玩 Model 吧
 
