@@ -34,5 +34,5 @@ cd blog
 python manage.py runserver
 ```
 
-打開你的瀏覽器，在網址的部分輸入 http://localhost:8000/ ，應該會看到一個 "Welcome to Django" 的頁面，這就代表你已經成功地創建了你的第一個 Django Project!
+打開你的瀏覽器，在網址的部分輸入 http://localhost:8000/ ，應該會看到一個 "It worked!" 的頁面，這就代表你已經成功地創建了你的第一個 Django Project!
 

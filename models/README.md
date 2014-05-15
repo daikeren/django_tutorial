@@ -11,12 +11,12 @@ Django 當中跟資料庫相關的設定，都在 settings.py 當中。打開 bl
 ```python
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/tmp/blog',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/tmp/blog',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 ```
@@ -86,10 +86,11 @@ python manage.py shell
 打開 shell 之後，我們輸入下面的指令
 
 ```python
->>> from article.models import Article, Tag
+>>> from article.models import Article, Category
 >>> Article.objects.create(content="Test1", title="article 1")
 >>> Article.objects.create(content="Test2", title="article 2")
->>> Article.objects.create(content="Test3", title="article 3")
+>>> c = Category.objects.create(name="category 1")
+>>> Article.objects.create(content="Test3", title="article 3", category=c)
 ```
 
 在這邊，我們創建了 3 個 Article 物件，把它們塞到了 database 當中。可以看到我們在這邊沒有寫任何的 SQL 就完成了 insert 資料到 database 的動作。
@@ -102,10 +103,10 @@ python manage.py shell
 >>>     print article.title
 ```
 
-取出一個 title 為 "article 1" 的 Model，修改它的 title 之後在儲存。
+取出一個 title 為 "article 1" 的 Model，修改它的 title 之後再儲存。
 
 ```python
->>> a = Article.objects.filter(title="article 1")
+>>> a = Article.objects.get(title="article 1")
 >>> a.title = "Article"
 >>> a.save()
 ```
@@ -114,5 +115,5 @@ python manage.py shell
 
 ## 練習
 
-* 除了我們有用到的 all(), create(), filter() 等等方法之外，看看還有什麼 Queryset API 可以玩呢？來玩玩看 delete() 吧。
+* 除了我們有用到的 all(), create(), get() 等等方法之外，看看還有什麼 Queryset API 可以玩呢？來玩玩看 delete(), filter() 吧。
 * 每個 Article object 除了我們自定的那些欄位之外還有什麼欄位呢？看看 pk 這個欄位吧！

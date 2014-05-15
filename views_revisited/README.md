@@ -14,7 +14,7 @@ def detail(request, pk):
     <head></head>
     <body>
     <h1>{0}</h1>
-    <div>{1}</div>
+    {1}
     </body>
     </html>
     """.format(article.title, article.content)

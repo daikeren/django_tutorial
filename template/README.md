@@ -28,11 +28,11 @@ def detail(request, pk):
     return render(request, "detail.html", {'article': article})
 ```
 
-我們 import 了 [django.shortcuts.render](https://docs.djangoproject.com/en/1.6/topics/http/shortcuts/#render)，這個 function 可以幫助我們讀取 template 之後，把變數以 python dictionary 的方式傳入 template 當中，最後再 render 出來並且回傳到瀏覽器中。
+我們 import 了 [django.shortcuts.render](https://docs.djangoproject.com/en/1.6/topics/http/shortcuts/#render)，這個 function 可以幫助我們讀取 template 之後，把變數以 python dictionary 的方式傳入 template 當中，最後再 render 出來並且回傳到瀏覽器中。打開 http://localhost:8000/article/1/ 看看，如果都沒做錯的話應該會出現跟剛剛一樣的畫面。
 
 在這邊大家可能會覺得好像 Django Template 也沒做什麼事情，只是個簡單的變數取代而已。不過其實 Django Template 提供了很多[內建的 template tag 跟 template filter](https://docs.djangoproject.com/en/1.6/ref/templates/builtins/)，也提供了你可以擴充 Django Template 的功能。
 
-讓我們來試試看簡單的 Tag 跟 Filter 吧，首先讓我們來做一件很無聊的事情：如果 article 的 primary key 是 1 的話，我們就把 content 的內容變成全部大寫。要做到這件事情很簡單，透過 [if](https://docs.djangoproject.com/en/1.6/ref/templates/builtins/#if) 這個 tag 跟 [upper](https://docs.djangoproject.com/en/1.6/ref/templates/builtins/#upper) 這個 filter 就可以達到。修改 detail.html 如下：
+讓我們來試試看簡單的 Tag 跟 Filter 吧，首先讓我們來做一件很無聊的事情：如果 article 的 primary key 是 1 的話，我們就把 content 的內容變成全部大寫，否則就照常輸出。要做到這件事情很簡單，透過 [if](https://docs.djangoproject.com/en/1.6/ref/templates/builtins/#if) 這個 tag 跟 [upper](https://docs.djangoproject.com/en/1.6/ref/templates/builtins/#upper) 這個 filter 就可以達到。修改 detail.html 如下：
 
 ```html
 <html>
@@ -41,6 +41,8 @@ def detail(request, pk):
 <h1>{{ article.title }}</h1>
 {% if article.pk == 1 %}
 {{ article.content|upper }}
+{% else %}
+{{ article.content }}
 {% endif %}
 </body>
 </html>

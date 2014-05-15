@@ -13,6 +13,12 @@ INSTALLED_APPS = (
 )
 ```
 
+因為我們新增了 django.contrib.admin 這個 APP，所以也要在資料庫中新增 table
+
+```
+python manage.py syncdb
+```
+
 接著在 blog/urls.py 當中加上
 
 ```python
@@ -25,7 +31,7 @@ urlpatterns = pattern('',
 )
 ```
 
-接著造訪 http://localhost:8000/admin ，使用你在上一章當中創建的 user/password 登入，如果一切順利的話你會看到 Django Admin 的畫面。不過這個時候 Django Admin 還看不到我們建立的 Tag, Article 這兩個 Model，所以我們要告訴 Django Admin 這件事情。
+接著造訪 http://localhost:8000/admin ，使用你在上一章當中創建的 user/password 登入，如果一切順利的話你會看到 Django Admin 的畫面。不過這個時候 Django Admin 還看不到我們建立的 Category, Article 這兩個 Model，所以我們要告訴 Django Admin 這件事情。
 
 在 article 目錄底下，新增 admin.py，內容如下：
 
@@ -38,3 +44,7 @@ admin.site.register(Category)
 ```
 
 這時候重新 reload http://localhost:8000/admin，應該就會看到上面出現 Article 跟 Category 的 admin 界面，我們就可以在這邊做創造、讀取、更新、刪除的動作了。
+
+## 練習
+
+* 玩玩看 Django Admin 吧，隨意新增幾個 Article 或是 Category 看看

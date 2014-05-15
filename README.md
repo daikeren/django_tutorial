@@ -6,3 +6,5 @@
 這份教材是用 [gitbook](http://www.gitbook.io/) 編寫而成，如果有任何問題或是建議，歡迎發 issue 過來，希望大家可以一起幫忙，讓這份教材更為完善。
 
 Build 好的版本會放在 [http://daikeren.github.io/django_tutorial/](http://daikeren.github.io/django_tutorial/)，歡迎大家直接取用 :)
+
+最終完成的程式碼放在 [https://github.com/daikeren/blog](https://github.com/daikeren/blog)

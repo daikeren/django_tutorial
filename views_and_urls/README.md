@@ -8,6 +8,8 @@
 
 在 Django 當中，處理這部分的邏輯稱之為 Django Views，通常我們都會放在 Django APP 當中的 views.py 檔案裡面。讓我們來寫第一個 Django View 吧！如同所有程式剛開始一樣，我們先從 Hello World 開始！
 
+在 article/views.py 底下新增以下的程式碼：
+
 ```python
 from django.http import HttpResponse
 

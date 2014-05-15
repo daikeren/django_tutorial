@@ -38,8 +38,8 @@ def create(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/')
+            new_article = form.save()
+            return HttpResponseRedirect('/article/' + str(new_article.pk))
 
     form = ArticleForm()
     return render(request, 'create_article.html', {'form': form})
@@ -69,7 +69,7 @@ def create(request):
 ```python
 urlpatterns = patterns(''
     ...
-    url(r'^create/$', 'article.views.create', name='create'),
+    url(r'^create/$', 'article.views.create'),
 )
 ```
 
