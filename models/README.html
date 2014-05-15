@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="6" data-basepath=".." data-revision="1400086632161">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="6" data-basepath=".." data-revision="1400129397499">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -368,6 +368,8 @@
 <p>在這邊，我們創建了 3 個 Article 物件，把它們塞到了 database 當中。可以看到我們在這邊沒有寫任何的 SQL 就完成了 insert 資料到 database 的動作。</p>
 <p>如果要查詢所有 Article 的資料，</p>
 <pre><code class="lang-python"><span class="hljs-prompt">&gt;&gt;&gt; </span>Article.objects.all()
+<span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> article <span class="hljs-keyword">in</span> Article.objects.all():
+<span class="hljs-prompt">&gt;&gt;&gt; </span>    <span class="hljs-keyword">print</span> article.title
 </code></pre>
 <p>取出一個 title 為 &quot;article 1&quot; 的 Model，修改它的 title 之後在儲存。</p>
 <pre><code class="lang-python"><span class="hljs-prompt">&gt;&gt;&gt; </span>a = Article.objects.filter(title=<span class="hljs-string">"article 1"</span>)
