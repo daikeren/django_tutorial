@@ -5,6 +5,8 @@
 首先我們先從 views 寫起吧！打開 article/views.py，加上這些 code
 
 ```python
+from article.models import Article
+
 def detail(request, pk):
     article = Article.objects.get(pk=int(pk))
     str = """
