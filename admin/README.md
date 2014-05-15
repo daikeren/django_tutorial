@@ -31,10 +31,10 @@ urlpatterns = pattern('',
 
 ```python
 from django.contrib import admin
-from article.models import Article, Tag
+from article.models import Article, Category
 
 admin.site.register(Article)
-admin.site.register(Tag)
+admin.site.register(Category)
 ```
 
-這時候重新 reload http://localhost:8000/admin，應該就會看到上面出現 Article 跟 Tag 的 admin 界面，我們就可以在這邊做創造、讀取、更新、刪除的動作了。
+這時候重新 reload http://localhost:8000/admin，應該就會看到上面出現 Article 跟 Category 的 admin 界面，我們就可以在這邊做創造、讀取、更新、刪除的動作了。

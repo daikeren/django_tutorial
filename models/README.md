@@ -31,14 +31,14 @@ DATABASES = {
 * 在 Model 當中的每一個 attribute 都代表了一個 database field
 * Django 讓我們可以透過 Model API 來執行 database query，這代表你可以儘量不用寫 SQL
 
-既然這是一個 blog 網站，那麼首先我們當然要來建立一個儲存文章的 Model。另外我們也希望建立一個儲存標簽(tag) 的 Model。
+既然這是一個 blog 網站，那麼首先我們當然要來建立一個儲存文章的 Model。另外我們也希望建立一個儲存類別(category) 的 Model。
 
 關於 Model 的資訊，我們都會放在 APP 目錄當中的 models.py 裡面。打開 articles/models.py，輸入
 
 ```python
 from django.db import models
 
-class Tag(models.Model):
+class Category(models.Model):
     name = models.CharField(u'Name', max_length=50)
 
     def __unicode__(self):
@@ -47,19 +47,19 @@ class Tag(models.Model):
 class Article(models.Model):
     content = models.TextField(u'Content')
     title = models.CharField(u'Title', max_length=50)
-    tags = models.ManyToManyField('Tag', null=True)
+    category = models.ForeignKey('Category', null=True)
 
     def __unicode__(self):
         return self.title
 ```
 
-在此，我們建立了兩個 Model，一個是 Tag，代表了標簽，另外一個則是 Article，代表了文章。這兩個 Model 都繼承自 django.db.models.Model。
+在此，我們建立了兩個 Model，一個是 Category，代表了類別，另外一個則是 Article，代表了文章。這兩個 Model 都繼承自 django.db.models.Model。
 
-首先先讓我們看看 Tag 這個 Model。這個 Model 我們宣告了一個叫做 name 的 attribute，它的形態是 [models.CharField](https://docs.djangoproject.com/en/dev/ref/models/fields/#charfield)，另外 max_length 則代表了 name 最大長度為 50。
+首先先讓我們看看 Category 這個 Model。這個 Model 我們宣告了一個叫做 name 的 attribute，它的形態是 [models.CharField](https://docs.djangoproject.com/en/dev/ref/models/fields/#charfield)，另外 max_length 則代表了 name 最大長度為 50。
 
-此外，我們也宣告了一個 ```__unicode__(self)``` function 來表示 Tag 物件要如何以 unicode 表示自己，在此我們直接用標籤的名字做表示。
+此外，我們也宣告了一個 ```__unicode__(self)``` function 來表示 Category 物件要如何以 unicode 表示自己，在此我們直接用類別的名字做表示。
 
-Article 這個 Model 跟 Tag Model 很類似，我們有三個屬性，content 代表文章內容，title 代表標題，tags 這是代表 Article 跟 Tag 會建立起資料庫當中的多對多關係。
+Article 這個 Model 跟 Category Model 很類似，我們有三個屬性，content 代表文章內容，title 代表標題，category 是代表 Article 跟 Category 會建立起資料庫當中的關聯性，在這邊我們用 ForeignKey 來建立起關係。
 
 ## 實際建立資料表
 
