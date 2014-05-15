@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Django Forms | Django Tutorial</title>
+        <title>Django Forms &amp; Django Views 的結合 | Django Tutorial</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -20,7 +20,7 @@
         <link rel="prev" href="../template/README.html" />
         
 
-        <meta property="og:title" content="Django Forms | Django Tutorial">
+        <meta property="og:title" content="Django Forms &amp; Django Views 的結合 | Django Tutorial">
         <meta property="og:site_name" content="Django Tutorial">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="10" data-basepath=".." data-revision="1400129808066">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="10" data-basepath=".." data-revision="1400156979426">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -199,7 +199,7 @@
             <li  data-level="8" data-path="views_revisited/README.html">
                 
                 <a href="../views_revisited/README.html">
-                    <i class="fa fa-check"></i> <b>8.</b> Django Views 再訪
+                    <i class="fa fa-check"></i> <b>8.</b> Django Views &amp; Django URL 再訪
                 </a>
                 
                 
@@ -217,7 +217,7 @@
             <li  data-level="10" data-path="forms/README.html">
                 
                 <a href="../forms/README.html">
-                    <i class="fa fa-check"></i> <b>10.</b> Django Forms
+                    <i class="fa fa-check"></i> <b>10.</b> Django Forms &amp; Django Views 的結合
                 </a>
                 
                 
@@ -273,7 +273,7 @@
     
         <a href="../intro/README.html" title="Django 簡介" class="chapter done new-chapter" data-progress="1" style="left: 7.6923076923076925%;"></a>
     
-        <a href="../forms/README.html" title="Django Forms" class="chapter done " data-progress="10" style="left: 15.384615384615385%;"></a>
+        <a href="../forms/README.html" title="Django Forms &amp; Django Views 的結合" class="chapter done " data-progress="10" style="left: 15.384615384615385%;"></a>
     
         <a href="../third_party_app/README.html" title="Django 的第三方套件們" class="chapter  " data-progress="11" style="left: 23.076923076923077%;"></a>
     
@@ -293,7 +293,7 @@
     
         <a href="../admin/README.html" title="Django 最吸引人的 feature 之一 - Django Admin" class="chapter  new-chapter" data-progress="7" style="left: 84.61538461538461%;"></a>
     
-        <a href="../views_revisited/README.html" title="Django Views 再訪" class="chapter  new-chapter" data-progress="8" style="left: 92.3076923076923%;"></a>
+        <a href="../views_revisited/README.html" title="Django Views &amp; Django URL 再訪" class="chapter  new-chapter" data-progress="8" style="left: 92.3076923076923%;"></a>
     
         <a href="../template/README.html" title="Django Template" class="chapter  new-chapter" data-progress="9" style="left: 100%;"></a>
     
@@ -302,9 +302,64 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_5">
                     
-                        <h1 id="django-forms">Django Forms</h1>
+                        <h1 id="django-forms-django-views-">Django Forms &amp; Django Views 的結合</h1>
+<p>在前面我們介紹了 Django Admin 可以來對我們的 Model 做 CRUD 的動作，但是或許你還是會希望自己手刻一個新增文章的界面，那麼該怎麼做呢？傳統的 framework 可能會需要處理以下的事情：</p>
+<ul>
+<li>用 HTML 刻個 form</li>
+<li>處理 HTTP POST request</li>
+<li>檢查表單欄位內容是否正確</li>
+<li>把確認過的資料存進 database 當中</li>
+</ul>
+<p>在 Django 當中，我們可以很輕鬆地做到這件事情。首先，先讓我們介紹 Django Form 這個 Django 當中很重要的 feature。</p>
+<h2 id="django-form">Django Form</h2>
+<p>當我們有了一個 Model 之後，如果希望在頁面上面可以更新那個 Model，最簡單的方式就是生出一個表單，表單上面有 Model 所需要的欄位。當使用者填好欄位按下送出之後，
+再由 web framework 處理送進來的資料，做完 validation，存進 database。</p>
+<p>在 Django 當中提供了 Django Form 讓你可以很輕鬆的做完這件事情，讓我們來看看怎麼做吧！</p>
+<p>首先讓我們在 article/views.py 當中新增以下的程式：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> forms
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArticleForm</span><span class="hljs-params">(forms.ModelForm)</span>:</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        model = Article
+        fields = [<span class="hljs-string">'title'</span>, <span class="hljs-string">'content'</span>, ]
+</code></pre>
+<p>如此我們就創造了一個依照 Article Model 的 Django Form 類別，它繼承自 <a href="https://docs.djangoproject.com/en/dev/topics/forms/modelforms/" target="_blank">ModelForm</a> 而表單的欄位是 &#39;title&#39; 跟 &#39;content&#39; 這兩個欄位。</p>
+<p>那麼我們要如何來使用 ArticleForm 呢？當然是在 view function 還有 template 當中來使用。在 article/views.py 當中新增以下的程式碼：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.http <span class="hljs-keyword">import</span> HttpResponseRedirect
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">'POST'</span>:
+        form = ArticleForm(request.POST)
+        <span class="hljs-keyword">if</span> form.is_valid():
+            form.save()
+            <span class="hljs-keyword">return</span> HttpResponseRedirect(<span class="hljs-string">'/'</span>)
+
+    form = ArticleForm()
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">'create_article.html'</span>, {<span class="hljs-string">'form'</span>: form})
+</code></pre>
+<p>在這邊，我們定義了一個 create view，接著我們透過 <a href="https://docs.djangoproject.com/en/dev/ref/request-response/#django.http.HttpRequest.method" target="_blank">request.method</a> 來判斷接下來的行為。如果是一般的 method，是創建一個 ArticleForm 的 instance，並且把它傳進去 create_article.html 的 template 當中。如果 method 為 POST，Django request 會把 POST 的資料都放到 <a href="https://docs.djangoproject.com/en/dev/ref/request-response/#django.http.HttpRequest.POST" target="_blank">request.POST</a> 當中，我們再把 request.POST 傳入 ArticleForm 當作 ArticleForm 的 constructor。接著透過 <code>is_valid()</code> 這個 method 來檢查輸入資料是否合法，如果是的話就存起來，最後再把網頁 redirect 到這篇的網址。</p>
+<p>接下來我想大家也知道要幹什麼了，新增 article/templates/create_article.html 這個檔案。內容如下：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"."</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span>&gt;</span>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>這邊我們透過了 form.as_p 這個 method 把 form 給 render 出來，另外在這邊我們看到了 <a href="https://docs.djangoproject.com/en/dev/ref/templates/builtins/#std:templatetag-csrf_token" target="_blank">csrf_token</a> 這個奇怪的 template tag，這個 template tag 的意義是做 <a href="https://docs.djangoproject.com/en/dev/ref/contrib/csrf/" target="_blank">Cross Site Request Forgery protection</a>，為了防止別的網站對你的站台做攻擊。細節我們在這邊不多說，可以參考 Django 官方文件有說明。這邊只要記得當你在做 POST 的時候要記得加上 csrf_token 這個 template tag 在 form 當中送出。</p>
+<p>最後我們再 blog/urls.py 當中加上一段 code 來把 url 跟 views 串起來：</p>
+<pre><code class="lang-python">urlpatterns = patterns(<span class="hljs-string">''</span>
+    ...
+    url(<span class="hljs-string">r'^create/$'</span>, <span class="hljs-string">'article.views.create'</span>, name=<span class="hljs-string">'create'</span>),
+)
+</code></pre>
+<p>打開瀏覽器看看 <a href="http://localhost:8000/create" target="_blank">http://localhost:8000/create</a> ，試試看你的表單吧！</p>
 
                     
                     </section>

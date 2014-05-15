@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="11" data-basepath=".." data-revision="1400129808066">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="11" data-basepath=".." data-revision="1400156979426">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -199,7 +199,7 @@
             <li  data-level="8" data-path="views_revisited/README.html">
                 
                 <a href="../views_revisited/README.html">
-                    <i class="fa fa-check"></i> <b>8.</b> Django Views 再訪
+                    <i class="fa fa-check"></i> <b>8.</b> Django Views &amp; Django URL 再訪
                 </a>
                 
                 
@@ -217,7 +217,7 @@
             <li  data-level="10" data-path="forms/README.html">
                 
                 <a href="../forms/README.html">
-                    <i class="fa fa-check"></i> <b>10.</b> Django Forms
+                    <i class="fa fa-check"></i> <b>10.</b> Django Forms &amp; Django Views 的結合
                 </a>
                 
                 
@@ -273,7 +273,7 @@
     
         <a href="../intro/README.html" title="Django 簡介" class="chapter done new-chapter" data-progress="1" style="left: 7.6923076923076925%;"></a>
     
-        <a href="../forms/README.html" title="Django Forms" class="chapter done " data-progress="10" style="left: 15.384615384615385%;"></a>
+        <a href="../forms/README.html" title="Django Forms &amp; Django Views 的結合" class="chapter done " data-progress="10" style="left: 15.384615384615385%;"></a>
     
         <a href="../third_party_app/README.html" title="Django 的第三方套件們" class="chapter done " data-progress="11" style="left: 23.076923076923077%;"></a>
     
@@ -293,7 +293,7 @@
     
         <a href="../admin/README.html" title="Django 最吸引人的 feature 之一 - Django Admin" class="chapter  new-chapter" data-progress="7" style="left: 84.61538461538461%;"></a>
     
-        <a href="../views_revisited/README.html" title="Django Views 再訪" class="chapter  new-chapter" data-progress="8" style="left: 92.3076923076923%;"></a>
+        <a href="../views_revisited/README.html" title="Django Views &amp; Django URL 再訪" class="chapter  new-chapter" data-progress="8" style="left: 92.3076923076923%;"></a>
     
         <a href="../template/README.html" title="Django Template" class="chapter  new-chapter" data-progress="9" style="left: 100%;"></a>
     
@@ -305,6 +305,26 @@
                     <section class="normal" id="section-gitbook_12">
                     
                         <h1 id="django-">Django 的第三方套件們</h1>
+<p>不知道到這邊為止大家有沒有體會到 Django 強大的威力？目前為止我們都只是用 Django 本身自帶的功能，但是 Django 除了自己本身有完整的功能外，還有許多的第三方套件可以使用。目前大多的第三方套件都能夠在 <a href="https://www.djangopackages.com/" target="_blank">Django Packages</a> 尋找到。</p>
+<p>讓我們來裝個套件玩玩吧！前面看過了 Django Admin 的畫面，我想有些人會覺得配色、版面看起來都太古老，希望可以漂亮一點。在這邊，我們來用 <a href="http://grappelliproject.com/" target="_blank">django-grappelli</a> 來強化 Django Admin!</p>
+<p>首先，切換到你的 shell，輸入</p>
+<p><code>pip install django-grappelli</code></p>
+<p>接著，在 blog/settings.py 當中修改 INSTALLED_APPS，加入 grappelli 進去，記得要放在 django.contrib.admin 之前。</p>
+<pre><code class="lang-python">INSTALLED_APPS = (
+    ...
+    <span class="hljs-string">'grappelli'</span>,
+    <span class="hljs-string">'django.contrib.admin'</span>,
+    ...
+)
+</code></pre>
+<p>最後，在 blog/urls.py 當中加上對應的 URL</p>
+<pre><code class="lang-python">urlpatterns = patterns(<span class="hljs-string">''</span>,
+    ...
+    (<span class="hljs-string">r'^grappelli/'</span>, include(<span class="hljs-string">'grappelli.urls'</span>)), <span class="hljs-comment"># grappelli URLS</span>
+    (<span class="hljs-string">r'^admin/'</span>,  include(admin.site.urls)), <span class="hljs-comment"># admin site</span>
+)
+</code></pre>
+<p>打開 <a href="http://localhost:8000/admin" target="_blank">http://localhost:8000/admin</a> ，看看 Django Admin 是不是變得比較漂亮了！</p>
 
                     
                     </section>
