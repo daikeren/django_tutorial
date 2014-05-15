@@ -35,3 +35,7 @@ urlpatterns = patterns('',
 在這邊，我們透過傳入 regular expression，把所有 article/1/、article/2/... 等等的 URL patterns 都丟給剛剛我們寫的 view 做處理。
 
 打開瀏覽器的 http://localhost:8000/article/1/ 看看，是不是會輸出你的第一篇文章內容？
+
+## 練習
+
+* 讓我們來把原本首頁的 Hello World 改成列出所有的 Article 吧！Hint: 我們可以用 Article.objects.all() 取出所有的 Article 物件，然後跑個 for loop 就好了！

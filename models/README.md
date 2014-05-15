@@ -98,6 +98,8 @@ python manage.py shell
 
 ```python
 >>> Article.objects.all()
+>>> for article in Article.objects.all():
+>>>     print article.title
 ```
 
 取出一個 title 為 "article 1" 的 Model，修改它的 title 之後在儲存。
