@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="10" data-basepath=".." data-revision="1400164824430">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="10" data-basepath=".." data-revision="1400167590087">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -333,8 +333,8 @@
     <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">'POST'</span>:
         form = ArticleForm(request.POST)
         <span class="hljs-keyword">if</span> form.is_valid():
-            form.save()
-            <span class="hljs-keyword">return</span> HttpResponseRedirect(<span class="hljs-string">'/'</span>)
+            new_article = form.save()
+            <span class="hljs-keyword">return</span> HttpResponseRedirect(<span class="hljs-string">'/article/'</span> + str(new_article.pk))
 
     form = ArticleForm()
     <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">'create_article.html'</span>, {<span class="hljs-string">'form'</span>: form})
@@ -356,7 +356,7 @@
 <p>最後我們再 blog/urls.py 當中加上一段 code 來把 url 跟 views 串起來：</p>
 <pre><code class="lang-python">urlpatterns = patterns(<span class="hljs-string">''</span>
     ...
-    url(<span class="hljs-string">r'^create/$'</span>, <span class="hljs-string">'article.views.create'</span>, name=<span class="hljs-string">'create'</span>),
+    url(<span class="hljs-string">r'^create/$'</span>, <span class="hljs-string">'article.views.create'</span>),
 )
 </code></pre>
 <p>打開瀏覽器看看 <a href="http://localhost:8000/create" target="_blank">http://localhost:8000/create</a> ，試試看你的表單吧！</p>

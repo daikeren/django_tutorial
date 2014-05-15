@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1400164824431
+# Revision 1400167590087
 
 CACHE:
 installation/README.html
@@ -10,12 +10,12 @@ deploy_to_cloud/README.html
 forms/README.html
 intro/README.html
 models/README.html
-project/README.html
-remark/README.html
-template/README.html
 third_party_app/README.html
-views_and_urls/README.html
+project/README.html
+template/README.html
+remark/README.html
 views_revisited/README.html
+views_and_urls/README.html
 gitbook/app.js
 gitbook/fonts/anonymouspro/400.woff
 gitbook/fonts/anonymouspro/400i.woff

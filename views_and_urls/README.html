@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="5" data-basepath=".." data-revision="1400164824430">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="5" data-basepath=".." data-revision="1400167590087">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -302,13 +302,14 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_13">
+                    <section class="normal" id="section-gitbook_14">
                     
                         <h1 id="django-views-django-urls">Django Views &amp; Django URLs</h1>
 <p>到這裡大家應該會在想 &quot;搞了半天都在弄這些有的沒的，什麼時候才能開始做我們第一個頁面呢？&quot; 這個章節會讓我們創立第一個頁面，並且讓我們了解到 Django 很重要的兩個部分 - URL 跟 Views.</p>
 <h2 id="django-views">Django Views</h2>
 <p>一個網頁程式當中的邏輯通常是這個樣子的：request 進來 -&gt; 從資料庫撈資料 -&gt; 處理資料 -&gt; 把網頁呈現出來。由於現在我們還沒有講到要怎麼樣做跟資料庫之間的互動，所以我們先來講講從 request 進來到頁面呈現出來這段過程 Django 是怎麼做的。</p>
 <p>在 Django 當中，處理這部分的邏輯稱之為 Django Views，通常我們都會放在 Django APP 當中的 views.py 檔案裡面。讓我們來寫第一個 Django View 吧！如同所有程式剛開始一樣，我們先從 Hello World 開始！</p>
+<p>在 article/views.py 底下新增以下的程式碼：</p>
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> django.http <span class="hljs-keyword">import</span> HttpResponse
 
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(request)</span>:</span>
