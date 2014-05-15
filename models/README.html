@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="6" data-basepath=".." data-revision="1400129397499">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="6" data-basepath=".." data-revision="1400129808066">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -328,11 +328,11 @@
 <li>在 Model 當中的每一個 attribute 都代表了一個 database field</li>
 <li>Django 讓我們可以透過 Model API 來執行 database query，這代表你可以儘量不用寫 SQL</li>
 </ul>
-<p>既然這是一個 blog 網站，那麼首先我們當然要來建立一個儲存文章的 Model。另外我們也希望建立一個儲存標簽(tag) 的 Model。</p>
+<p>既然這是一個 blog 網站，那麼首先我們當然要來建立一個儲存文章的 Model。另外我們也希望建立一個儲存類別(category) 的 Model。</p>
 <p>關於 Model 的資訊，我們都會放在 APP 目錄當中的 models.py 裡面。打開 articles/models.py，輸入</p>
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tag</span><span class="hljs-params">(models.Model)</span>:</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Category</span><span class="hljs-params">(models.Model)</span>:</span>
     name = models.CharField(<span class="hljs-string">u'Name'</span>, max_length=<span class="hljs-number">50</span>)
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__unicode__</span><span class="hljs-params">(self)</span>:</span>
@@ -341,15 +341,15 @@
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Article</span><span class="hljs-params">(models.Model)</span>:</span>
     content = models.TextField(<span class="hljs-string">u'Content'</span>)
     title = models.CharField(<span class="hljs-string">u'Title'</span>, max_length=<span class="hljs-number">50</span>)
-    tags = models.ManyToManyField(<span class="hljs-string">'Tag'</span>, null=<span class="hljs-keyword">True</span>)
+    category = models.ForeignKey(<span class="hljs-string">'Category'</span>, null=<span class="hljs-keyword">True</span>)
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__unicode__</span><span class="hljs-params">(self)</span>:</span>
         <span class="hljs-keyword">return</span> self.title
 </code></pre>
-<p>在此，我們建立了兩個 Model，一個是 Tag，代表了標簽，另外一個則是 Article，代表了文章。這兩個 Model 都繼承自 django.db.models.Model。</p>
-<p>首先先讓我們看看 Tag 這個 Model。這個 Model 我們宣告了一個叫做 name 的 attribute，它的形態是 <a href="https://docs.djangoproject.com/en/dev/ref/models/fields/#charfield" target="_blank">models.CharField</a>，另外 max_length 則代表了 name 最大長度為 50。</p>
-<p>此外，我們也宣告了一個 <code>__unicode__(self)</code> function 來表示 Tag 物件要如何以 unicode 表示自己，在此我們直接用標籤的名字做表示。</p>
-<p>Article 這個 Model 跟 Tag Model 很類似，我們有三個屬性，content 代表文章內容，title 代表標題，tags 這是代表 Article 跟 Tag 會建立起資料庫當中的多對多關係。</p>
+<p>在此，我們建立了兩個 Model，一個是 Category，代表了類別，另外一個則是 Article，代表了文章。這兩個 Model 都繼承自 django.db.models.Model。</p>
+<p>首先先讓我們看看 Category 這個 Model。這個 Model 我們宣告了一個叫做 name 的 attribute，它的形態是 <a href="https://docs.djangoproject.com/en/dev/ref/models/fields/#charfield" target="_blank">models.CharField</a>，另外 max_length 則代表了 name 最大長度為 50。</p>
+<p>此外，我們也宣告了一個 <code>__unicode__(self)</code> function 來表示 Category 物件要如何以 unicode 表示自己，在此我們直接用類別的名字做表示。</p>
+<p>Article 這個 Model 跟 Category Model 很類似，我們有三個屬性，content 代表文章內容，title 代表標題，category 是代表 Article 跟 Category 會建立起資料庫當中的關聯性，在這邊我們用 ForeignKey 來建立起關係。</p>
 <h2 id="-">實際建立資料表</h2>
 <p>上面的 code 只是告訴 Django table 要長什麼樣子，接下來要真正的在資料庫中把 table 生出來。</p>
 <p>要把 table 生出來一樣要使用 manage.py 這個指令，我們透過 syncdb 來產生 table。syncdb 會根據 settings.py 裡面 INSTALLED_APPS 當中的 Django APP 當中的 models.py 中的 Model 生出相對應的 table，打開你的 shell 輸入：</p>

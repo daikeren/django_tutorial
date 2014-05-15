@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="7" data-basepath=".." data-revision="1400129397499">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="7" data-basepath=".." data-revision="1400129808066">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -326,12 +326,12 @@ urlpatterns = pattern(<span class="hljs-string">''</span>,
 <p>接著造訪 <a href="http://localhost:8000/admin" target="_blank">http://localhost:8000/admin</a> ，使用你在上一章當中創建的 user/password 登入，如果一切順利的話你會看到 Django Admin 的畫面。不過這個時候 Django Admin 還看不到我們建立的 Tag, Article 這兩個 Model，所以我們要告訴 Django Admin 這件事情。</p>
 <p>在 article 目錄底下，新增 admin.py，內容如下：</p>
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
-<span class="hljs-keyword">from</span> article.models <span class="hljs-keyword">import</span> Article, Tag
+<span class="hljs-keyword">from</span> article.models <span class="hljs-keyword">import</span> Article, Category
 
 admin.site.register(Article)
-admin.site.register(Tag)
+admin.site.register(Category)
 </code></pre>
-<p>這時候重新 reload <a href="http://localhost:8000/admin，應該就會看到上面出現" target="_blank">http://localhost:8000/admin，應該就會看到上面出現</a> Article 跟 Tag 的 admin 界面，我們就可以在這邊做創造、讀取、更新、刪除的動作了。</p>
+<p>這時候重新 reload <a href="http://localhost:8000/admin，應該就會看到上面出現" target="_blank">http://localhost:8000/admin，應該就會看到上面出現</a> Article 跟 Category 的 admin 界面，我們就可以在這邊做創造、讀取、更新、刪除的動作了。</p>
 
                     
                     </section>
