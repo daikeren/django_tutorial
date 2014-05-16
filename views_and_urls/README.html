@@ -43,7 +43,7 @@
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="5" data-basepath=".." data-revision="1400217658004">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="5" data-basepath=".." data-revision="1400233508936">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -313,8 +313,8 @@
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> django.http <span class="hljs-keyword">import</span> HttpResponse
 
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(request)</span>:</span>
-    str = <span class="hljs-string">"Hello World!"</span>
-    <span class="hljs-keyword">return</span> HttpResponse(str)
+    s = <span class="hljs-string">"Hello World!"</span>
+    <span class="hljs-keyword">return</span> HttpResponse(s)
 </code></pre>
 <p>這是一個最簡單的 Django View，我們可以看到一個 Django View 基本上就是一個 python function，傳入值是 request，它的型別是 <a href="https://docs.djangoproject.com/en/1.6/ref/request-response/#httprequest-objects" target="_blank">HttpRequest</a>，當中 Django 幫我們封裝了有關一個 HTTP Request 進來會傳入的資料。包含了 request body, request method... 等等，在往後的章節當中我們會看到這部分的應用。</p>
 <p>然後回傳一個用 &quot;Hello World!&quot; 字串當 constructor 的 <a href="https://docs.djangoproject.com/en/1.6/ref/request-response/#httpresponse-objects" target="_blank">HttpResponse</a> 物件。同樣的，HttpResponse 也幫我們封裝了回傳給 browser 的資訊。包含了 content type, status code 等等。</p>
