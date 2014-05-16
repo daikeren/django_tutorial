@@ -14,8 +14,8 @@
 from django.http import HttpResponse
 
 def home(request):
-    str = "Hello World!"
-    return HttpResponse(str)
+    s = "Hello World!"
+    return HttpResponse(s)
 ```
 
 這是一個最簡單的 Django View，我們可以看到一個 Django View 基本上就是一個 python function，傳入值是 request，它的型別是 [HttpRequest](https://docs.djangoproject.com/en/1.6/ref/request-response/#httprequest-objects)，當中 Django 幫我們封裝了有關一個 HTTP Request 進來會傳入的資料。包含了 request body, request method... 等等，在往後的章節當中我們會看到這部分的應用。
