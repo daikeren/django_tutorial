@@ -23,7 +23,7 @@ def detail(request, pk):
 
 在這邊我們寫了一個叫做 detail 的 view，傳入的參數除了 request 之外又多了 pk 這個參數，我們稍待會來講如何從 url 當中取出來 pk 的值。
 
-接下來我們一樣使用了一個 str 變數，並且把取出的 article.title 以及 article.content 透過 [Python String Formatting](https://docs.python.org/2/library/stdtypes.html#string-formatting) 傳入來幫助我們輸出 HTML。最後再用 HttpResponse 把 HTML 吐出來。
+接下來我們一樣使用了一個 s 變數，並且把取出的 article.title 以及 article.content 透過 [Python String Formatting](https://docs.python.org/2/library/stdtypes.html#string-formatting) 傳入來幫助我們輸出 HTML。最後再用 HttpResponse 把 HTML 吐出來。
 
 接著我們就來把 url 跟 views 做結合吧！打開 blog/urls.py，加上這些 code
 
