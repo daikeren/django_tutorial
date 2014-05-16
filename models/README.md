@@ -6,22 +6,20 @@
 
 使用 Django 的最大好處之一就是 Django 原生支援許多的資料庫，只要經過簡單的設定，你可以輕鬆從 sqlite 轉換到 MySQL 甚至是 Oracle。為了我們現在開發方便，我們就先用最簡單的 sqlite 吧！
 
-Django 當中跟資料庫相關的設定，都在 settings.py 當中。打開 blog/settings.py 這個檔案，找到並且修改成以下的程式碼：
+Django 當中跟資料庫相關的設定，都在 settings.py 當中。打開 blog/settings.py 這個檔案，會看到如下的程式碼：
 
 ```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/tmp/blog',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 ```
 
-在這邊，我們指定了 database engine 為 sqlite3，當然你也可以使用 MySQL、Oracle 等等其他資料庫。另外還要指定我們要連的 database 名稱、使用者、密碼、HOST 以及 PORT。在這邊由於我們是用 sqlite，所以名稱的部分就填上一個檔案路徑。
+在預設設定中，Django 指定了 database engine 為 sqlite3，並將它放在 `BASE_DIR` 這個目錄（代表你的專案最外層目錄）。你也可以使用其他資料庫，官方支援的除了 SQLite 外尚有 PostgreSQL、MySQL 與 Oracle，另外也有一些非官方的套件可以支援其他資料庫。大部份的資料庫系統中，通常需要指定 database 名稱、使用者、密碼、HOST 以及 PORT，但在這裡我們為了方便說明起見，直接使用預設的 SQLite 設定。
+
+
 
 ## Django Model
 
