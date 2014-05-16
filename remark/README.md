@@ -16,6 +16,6 @@
 
 * [Django 官方文件](https://www.djangoproject.com/) - 必看！文件相當詳細，不過建議有問題再來找。
 * [Django Book](http://www.djangobook.com/en/2.0/index.html) - 雖然書的內容有點舊，不過還是有些東西值得參考
-* [Getting Start with Django](http://gettingstartedwithdjango.com/) - 如果你比較喜歡看 video，或許可以參考這個網站
+* [Getting Started with Django](http://gettingstartedwithdjango.com/) - 如果你比較喜歡看 video，或許可以參考這個網站
 * [Two Scoops of Django](http://www.amazon.com/Two-Scoops-Django-Best-Practices/dp/098146730X) - 近期寫的最好的 Django 書之一，有看一定有收獲
 
