@@ -9,7 +9,7 @@ from article.models import Article
 
 def detail(request, pk):
     article = Article.objects.get(pk=int(pk))
-    str = """
+    s = """
     <html>
     <head></head>
     <body>
@@ -18,7 +18,7 @@ def detail(request, pk):
     </body>
     </html>
     """.format(article.title, article.content)
-    return HttpResponse(str)
+    return HttpResponse(s)
 ```
 
 在這邊我們寫了一個叫做 detail 的 view，傳入的參數除了 request 之外又多了 pk 這個參數，我們稍待會來講如何從 url 當中取出來 pk 的值。
