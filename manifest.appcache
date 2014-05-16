@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1400167590087
+# Revision 1400217658005
 
 CACHE:
 installation/README.html
@@ -10,12 +10,12 @@ deploy_to_cloud/README.html
 forms/README.html
 intro/README.html
 models/README.html
-third_party_app/README.html
 project/README.html
-template/README.html
 remark/README.html
-views_revisited/README.html
+template/README.html
+third_party_app/README.html
 views_and_urls/README.html
+views_revisited/README.html
 gitbook/app.js
 gitbook/fonts/anonymouspro/400.woff
 gitbook/fonts/anonymouspro/400i.woff
@@ -52,8 +52,8 @@ gitbook/jsrepl/sandbox.html
 gitbook/jsrepl/sandbox.js
 gitbook/print.css
 gitbook/style.css
-gitbook/plugins/gitbook-plugin-mixpanel/plugin.js
 gitbook/plugins/gitbook-plugin-mathjax/plugin.js
+gitbook/plugins/gitbook-plugin-mixpanel/plugin.js
 
 NETWORK:
 *
