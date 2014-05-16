@@ -45,7 +45,7 @@ class Category(models.Model):
 class Article(models.Model):
     content = models.TextField(u'Content')
     title = models.CharField(u'Title', max_length=50)
-    category = models.ForeignKey('Category', null=True)
+    category = models.ForeignKey('Category', blank=True, null=True)
 
     def __unicode__(self):
         return self.title
