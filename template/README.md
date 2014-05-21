@@ -1,6 +1,6 @@
 # Django Template
 
-在前一章當中我們透過在 view 當中使用 str 的方式來幫助我們輸出 HTML，不過這樣會有一個很大的壞處：通常來說 HTML 的部分可能是由前端工程師寫的，如果我們把 HTML 寫在 view 當中，會造成維護以及修改上面的困難，因此 Django 提供了 Django Template 來幫助我們解決這部分的問題。
+在前一章當中我們透過在 view 當中使用直接輸出字串的方式來幫助我們輸出 HTML，不過這樣會有一個很大的壞處：通常來說 HTML 的部分可能是由前端工程師寫的，如果我們把 HTML 寫在 view 當中，會造成維護以及修改上面的困難，因此 Django 提供了 Django Template 來幫助我們解決這部分的問題。
 
 讓我們在我們的 article 目錄底下建立一個 templates 目錄。裡面新增一個 detail.html 檔案，內容如下
 
