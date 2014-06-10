@@ -5,5 +5,10 @@ before_install: npm install -g grunt-cli
 install:
     - "npm install"
 after_success:
+    - git config user.name "Andy Dai"
+    - git config user.email "andy@dorm7.com"
     - "grunt gitbook"
     - "grunt gh-pages"
+env:
+    global:
+        - secure: "XyXGLCsPNUuaoHvKSOJqEHnbkmHtFn7O/g0hsNaPISb82dY4gINCr4HTrIQKHZ+Vti54F/P3XEY6rwhGcD6keyUTf8enZ9gSlbLX9Xwc4+wv6qaW1uI9exxMBdGs9kv7mCK0Z3FQEWksThw3ezpWD/JS+lmJ+dAkNWc3A55tkyM="
