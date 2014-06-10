@@ -14,7 +14,9 @@ module.exports = function (grunt) {
         },
         'gh-pages': {
             options: {
-                base: '_book'
+                base: '_book',
+                silent: true
+
             },
             src: ['**']
         },
