@@ -12,7 +12,7 @@ after_success:
     - git config credential.helper "store --file=.git/credentials"
     - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
     - "grunt gitbook"
-    - "grunt gh-pages"
+    - "grunt gh-pages --force"
 env:
     global:
         - secure: "XyXGLCsPNUuaoHvKSOJqEHnbkmHtFn7O/g0hsNaPISb82dY4gINCr4HTrIQKHZ+Vti54F/P3XEY6rwhGcD6keyUTf8enZ9gSlbLX9Xwc4+wv6qaW1uI9exxMBdGs9kv7mCK0Z3FQEWksThw3ezpWD/JS+lmJ+dAkNWc3A55tkyM="
