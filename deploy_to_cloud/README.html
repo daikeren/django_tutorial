@@ -1,93 +1,84 @@
 <!DOCTYPE HTML>
 <html lang="en-US" manifest="../manifest.appcache">
-    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+    
+    <head>
         
         <meta charset="UTF-8">
         <title>把你的 Django Project 丟上雲端 | Django Tutorial</title>
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="robots" content="index, follow">
-        <meta name="author" content="daikeren">
-        <meta name="description" content="這是為 [PyCon APAC 2014](https://tw.pycon.org/2014apac/) 所開的 Django Tutorial 課程教材，本課程中，將會以建立一個部落格為例子，給大家對於 Django 的重要元件能夠有基本的認知，
-在課程結束之後，學員將可以有架起簡單網站的能力。">
-        <meta name="keywords" content="gitbook,github" >
-        <meta name="generator" content="www.gitbook.io">
-
-        
-        <link rel="next" href="../remark/README.html" />
-        
-        
-        <link rel="prev" href="../third_party_app/README.html" />
-        
-
-        <meta property="og:title" content="把你的 Django Project 丟上雲端 | Django Tutorial">
-        <meta property="og:site_name" content="Django Tutorial">
-        <meta property="og:type" content="book">
-        <meta property="og:locale" content="en_US">
-
-        <meta property="book:author" content="https://github.com/daikeren">
-        <meta property="book:tag" content="GitBook">
-
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 0.5.2">
+        <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <meta name="author" content="daikeren">
+    
+    
+    <link rel="next" href="../remark/README.html" />
+    
+    
+    <link rel="prev" href="../third_party_app/README.html" />
+    
+
         
     </head>
     <body>
         
-
-        <link rel="stylesheet" href="../gitbook/style.css">
         
+<link rel="stylesheet" href="../gitbook/style.css">
 
 
         
-    <div class="book" data-github="daikeren/django_tutorial" data-level="12" data-basepath=".." data-revision="1401334708120">
+    <div class="book" data-github="daikeren/django_tutorial" data-level="12" data-basepath=".." data-revision="1402371313481">
     <div class="book-header">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/daikeren/django_tutorial" target="_blank" class="btn pull-left"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/daikeren/django_tutorial" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
-    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
-        <a href="#" class="btn pull-left toggle-font-settings"><i class="fa fa-font"></i>
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
         </a>
         <div class="dropdown-menu font-settings">
-	<div class="dropdown-caret">
-  <span class="caret-outer"></span>
-  <span class="caret-inner"></span>
-</div>
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
 
-	<div class="btn-group btn-block">
-		<button id="reduce-font-size" class="btn btn-default">A</button>
-		<button id="enlarge-font-size" class="btn btn-default">A</button>
-	</div>
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
 
-	<ul class="list-group font-family-list">
-		<li class="list-group-item" data-font="0">Serif</li>
-		<li class="list-group-item" data-font="1">Sans</li>
-	</ul>
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
 
-	<div class="btn-group btn-group-xs btn-block color-theme-list">
-	  <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
-	  <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
-	  <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
-	</div>
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
 </div>
 
     </span>
 
     <!-- Actions Right -->
     
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
     
     
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
     
     
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
 
     
@@ -102,26 +93,32 @@
     </h1>
 </div>
 
-    <div class="book-summary">
+    
+
+<div class="book-summary">
     <div class="book-search">
         <input type="text" placeholder="Search" class="form-control" />
     </div>
     <ul class="summary">
         
+        
+        
         <li>
-            <a href="https://github.com/daikeren" target="blank">About the author</a>
+            <a href="https://github.com/daikeren" target="blank" class="author-link">About the author</a>
         </li>
         
 
         
+        
         <li>
-            <a href="https://github.com/daikeren/django_tutorial/issues" target="blank">Questions and Issues</a>
+            <a href="https://github.com/daikeren/django_tutorial/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
         
 
         
+        
         <li>
-            <a href="https://github.com/daikeren/django_tutorial/edit/master/deploy_to_cloud/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/daikeren/django_tutorial/edit/master/deploy_to_cloud/README.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -133,128 +130,130 @@
             <a href="../"><i class="fa fa-check"></i> Introduction</a>
         </li>
         
-            <li  data-level="1" data-path="intro/README.html">
-                
-                <a href="../intro/README.html">
-                    <i class="fa fa-check"></i> <b>1.</b> Django 簡介
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="2" data-path="installation/README.html">
-                
-                <a href="../installation/README.html">
-                    <i class="fa fa-check"></i> <b>2.</b> 安裝 Django
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="3" data-path="project/README.html">
-                
-                <a href="../project/README.html">
-                    <i class="fa fa-check"></i> <b>3.</b> Django Project
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="4" data-path="apps/README.html">
-                
-                <a href="../apps/README.html">
-                    <i class="fa fa-check"></i> <b>4.</b> Django APPs
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="5" data-path="views_and_urls/README.html">
-                
-                <a href="../views_and_urls/README.html">
-                    <i class="fa fa-check"></i> <b>5.</b> Django Views &amp; Django URLs
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="6" data-path="models/README.html">
-                
-                <a href="../models/README.html">
-                    <i class="fa fa-check"></i> <b>6.</b> Django 與資料庫的互動 - Django Model
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="7" data-path="admin/README.html">
-                
-                <a href="../admin/README.html">
-                    <i class="fa fa-check"></i> <b>7.</b> Django 最吸引人的 feature 之一 - Django Admin
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="8" data-path="views_revisited/README.html">
-                
-                <a href="../views_revisited/README.html">
-                    <i class="fa fa-check"></i> <b>8.</b> Django Views &amp; Django URL 再訪
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="9" data-path="template/README.html">
-                
-                <a href="../template/README.html">
-                    <i class="fa fa-check"></i> <b>9.</b> Django Template
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="10" data-path="forms/README.html">
-                
-                <a href="../forms/README.html">
-                    <i class="fa fa-check"></i> <b>10.</b> Django Forms &amp; Django Views 的結合
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="11" data-path="third_party_app/README.html">
-                
-                <a href="../third_party_app/README.html">
-                    <i class="fa fa-check"></i> <b>11.</b> Django 的第三方套件們
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="12" data-path="deploy_to_cloud/README.html">
-                
-                <a href="../deploy_to_cloud/README.html">
-                    <i class="fa fa-check"></i> <b>12.</b> 把你的 Django Project 丟上雲端
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="13" data-path="remark/README.html">
-                
-                <a href="../remark/README.html">
-                    <i class="fa fa-check"></i> <b>13.</b> 這只是開始...
-                </a>
-                
-                
-            </li>
-        
+    
+        <li class="chapter " data-level="1" data-path="intro/README.html">
+            
+            <a href="../intro/README.html">
+                <i class="fa fa-check"></i> <b>1.</b> Django 簡介
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="installation/README.html">
+            
+            <a href="../installation/README.html">
+                <i class="fa fa-check"></i> <b>2.</b> 安裝 Django
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="project/README.html">
+            
+            <a href="../project/README.html">
+                <i class="fa fa-check"></i> <b>3.</b> Django Project
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="apps/README.html">
+            
+            <a href="../apps/README.html">
+                <i class="fa fa-check"></i> <b>4.</b> Django APPs
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="views_and_urls/README.html">
+            
+            <a href="../views_and_urls/README.html">
+                <i class="fa fa-check"></i> <b>5.</b> Django Views &amp; Django URLs
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="models/README.html">
+            
+            <a href="../models/README.html">
+                <i class="fa fa-check"></i> <b>6.</b> Django 與資料庫的互動 - Django Model
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="admin/README.html">
+            
+            <a href="../admin/README.html">
+                <i class="fa fa-check"></i> <b>7.</b> Django 最吸引人的 feature 之一 - Django Admin
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="views_revisited/README.html">
+            
+            <a href="../views_revisited/README.html">
+                <i class="fa fa-check"></i> <b>8.</b> Django Views &amp; Django URL 再訪
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="template/README.html">
+            
+            <a href="../template/README.html">
+                <i class="fa fa-check"></i> <b>9.</b> Django Template
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="forms/README.html">
+            
+            <a href="../forms/README.html">
+                <i class="fa fa-check"></i> <b>10.</b> Django Forms &amp; Django Views 的結合
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="third_party_app/README.html">
+            
+            <a href="../third_party_app/README.html">
+                <i class="fa fa-check"></i> <b>11.</b> Django 的第三方套件們
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="deploy_to_cloud/README.html">
+            
+            <a href="../deploy_to_cloud/README.html">
+                <i class="fa fa-check"></i> <b>12.</b> 把你的 Django Project 丟上雲端
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="remark/README.html">
+            
+            <a href="../remark/README.html">
+                <i class="fa fa-check"></i> <b>13.</b> 這只是開始...
+            </a>
+            
+            
+        </li>
+    
+
 
         
         <li class="divider"></li>
         <li>
-            <a href="http://www.gitbook.io/" target="blank">Generated using GitBook</a>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
         </li>
         
     </ul>
@@ -265,7 +264,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 30.76923076923077%;min-width: 23.076923076923077%;"></div>
+        <div class="inner" style="width: 92.3076923076923%;min-width: 84.61538461538461%;"></div>
     </div>
     <div class="chapters">
     
@@ -273,29 +272,29 @@
     
         <a href="../intro/README.html" title="Django 簡介" class="chapter done new-chapter" data-progress="1" style="left: 7.6923076923076925%;"></a>
     
-        <a href="../forms/README.html" title="Django Forms &amp; Django Views 的結合" class="chapter done " data-progress="10" style="left: 15.384615384615385%;"></a>
+        <a href="../installation/README.html" title="安裝 Django" class="chapter done new-chapter" data-progress="2" style="left: 15.384615384615385%;"></a>
     
-        <a href="../third_party_app/README.html" title="Django 的第三方套件們" class="chapter done " data-progress="11" style="left: 23.076923076923077%;"></a>
+        <a href="../project/README.html" title="Django Project" class="chapter done new-chapter" data-progress="3" style="left: 23.076923076923077%;"></a>
     
-        <a href="../deploy_to_cloud/README.html" title="把你的 Django Project 丟上雲端" class="chapter done " data-progress="12" style="left: 30.76923076923077%;"></a>
+        <a href="../apps/README.html" title="Django APPs" class="chapter done new-chapter" data-progress="4" style="left: 30.76923076923077%;"></a>
     
-        <a href="../remark/README.html" title="這只是開始..." class="chapter  " data-progress="13" style="left: 38.46153846153846%;"></a>
+        <a href="../views_and_urls/README.html" title="Django Views &amp; Django URLs" class="chapter done new-chapter" data-progress="5" style="left: 38.46153846153846%;"></a>
     
-        <a href="../installation/README.html" title="安裝 Django" class="chapter  new-chapter" data-progress="2" style="left: 46.15384615384615%;"></a>
+        <a href="../models/README.html" title="Django 與資料庫的互動 - Django Model" class="chapter done new-chapter" data-progress="6" style="left: 46.15384615384615%;"></a>
     
-        <a href="../project/README.html" title="Django Project" class="chapter  new-chapter" data-progress="3" style="left: 53.84615384615385%;"></a>
+        <a href="../admin/README.html" title="Django 最吸引人的 feature 之一 - Django Admin" class="chapter done new-chapter" data-progress="7" style="left: 53.84615384615385%;"></a>
     
-        <a href="../apps/README.html" title="Django APPs" class="chapter  new-chapter" data-progress="4" style="left: 61.53846153846154%;"></a>
+        <a href="../views_revisited/README.html" title="Django Views &amp; Django URL 再訪" class="chapter done new-chapter" data-progress="8" style="left: 61.53846153846154%;"></a>
     
-        <a href="../views_and_urls/README.html" title="Django Views &amp; Django URLs" class="chapter  new-chapter" data-progress="5" style="left: 69.23076923076923%;"></a>
+        <a href="../template/README.html" title="Django Template" class="chapter done new-chapter" data-progress="9" style="left: 69.23076923076923%;"></a>
     
-        <a href="../models/README.html" title="Django 與資料庫的互動 - Django Model" class="chapter  new-chapter" data-progress="6" style="left: 76.92307692307692%;"></a>
+        <a href="../forms/README.html" title="Django Forms &amp; Django Views 的結合" class="chapter done " data-progress="10" style="left: 76.92307692307692%;"></a>
     
-        <a href="../admin/README.html" title="Django 最吸引人的 feature 之一 - Django Admin" class="chapter  new-chapter" data-progress="7" style="left: 84.61538461538461%;"></a>
+        <a href="../third_party_app/README.html" title="Django 的第三方套件們" class="chapter done " data-progress="11" style="left: 84.61538461538461%;"></a>
     
-        <a href="../views_revisited/README.html" title="Django Views &amp; Django URL 再訪" class="chapter  new-chapter" data-progress="8" style="left: 92.3076923076923%;"></a>
+        <a href="../deploy_to_cloud/README.html" title="把你的 Django Project 丟上雲端" class="chapter done " data-progress="12" style="left: 92.3076923076923%;"></a>
     
-        <a href="../template/README.html" title="Django Template" class="chapter  new-chapter" data-progress="9" style="left: 100%;"></a>
+        <a href="../remark/README.html" title="這只是開始..." class="chapter  " data-progress="13" style="left: 100%;"></a>
     
     </div>
 </div>
@@ -347,24 +346,20 @@ git commit -m &quot;First commit&quot;
         </div>
 
         
-        <a href="../third_party_app/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        <a href="../third_party_app/README.html" class="navigation navigation-prev " aria-label="Previous page: Django 的第三方套件們"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../remark/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        <a href="../remark/README.html" class="navigation navigation-next " aria-label="Next page: 這只是開始..."><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
-        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
-        <script src="../gitbook/app.js"></script>
-        
+<script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+<script src="../gitbook/app.js"></script>
 
     
-    <script src="../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    <script src="../gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
     
 
     
@@ -377,10 +372,12 @@ git commit -m &quot;First commit&quot;
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {};
+    var config = {"ga":{"token":"UA-312079-14"}};
     gitbook.start(config);
 });
 </script>
 
+        <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-312079-14', 'auto');ga('send', 'pageview');</script>
     </body>
+    
 </html>
