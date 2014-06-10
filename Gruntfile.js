@@ -13,6 +13,14 @@ module.exports = function (grunt) {
             }
         },
         'gh-pages': {
+            travis: {
+                options: {
+                    repo: 'https://' + process.env.GH_TOKEN + '@github.com/daikeren/django_tutorial.git',
+//                    silent: true,
+                    base: '_book'
+                },
+                src: ['**']
+            },
             options: {
                 base: '_book'
             },
