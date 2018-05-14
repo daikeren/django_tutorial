@@ -9,7 +9,6 @@
 * order: 管理訂單
 * shipping: 管理物流
 
-
 ## 第一個 Django APP
 
 還記得剛剛的 manage.py 嗎？在這邊我們也會用 manage.py 來創建我們的第一個 Django APP。要創建 Django APP，首先，我們先來創建一個管理文章的 Django APP，我們叫做 article 好了。在 shell 底下輸入：

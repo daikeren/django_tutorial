@@ -18,9 +18,9 @@ def home(request):
     return HttpResponse(s)
 ```
 
-這是一個最簡單的 Django View，我們可以看到一個 Django View 基本上就是一個 python function，傳入值是 request，它的型別是 [HttpRequest](https://docs.djangoproject.com/en/1.6/ref/request-response/#httprequest-objects)，當中 Django 幫我們封裝了有關一個 HTTP Request 進來會傳入的資料。包含了 request body, request method... 等等，在往後的章節當中我們會看到這部分的應用。
+這是一個最簡單的 Django View，我們可以看到一個 Django View 基本上就是一個 python function，傳入值是 request，它的型別是 [HttpRequest](https://docs.djangoproject.com/en/2.0/ref/request-response/#httprequest-objects)，當中 Django 幫我們封裝了有關一個 HTTP Request 進來會傳入的資料。包含了 request body, request method... 等等，在往後的章節當中我們會看到這部分的應用。
 
-然後回傳一個用 "Hello World!" 字串當 constructor 的 [HttpResponse](https://docs.djangoproject.com/en/1.6/ref/request-response/#httpresponse-objects) 物件。同樣的，HttpResponse 也幫我們封裝了回傳給 browser 的資訊。包含了 content type, status code 等等。
+然後回傳一個用 "Hello World!" 字串當 constructor 的 [HttpResponse](https://docs.djangoproject.com/en/2.0/ref/request-response/#httpresponse-objects) 物件。同樣的，HttpResponse 也幫我們封裝了回傳給 browser 的資訊。包含了 content type, status code 等等。
 
 透過 Django 的 Request 還有 Response 物件，我們在處理複雜的 HTTP 的時候可以省下更多的麻煩事要處理，讓我們可以更專注在把東西做好上面。
 
@@ -29,29 +29,20 @@ def home(request):
 我們寫好第一個 view 之後，那麼我們該怎麼讓 Django 知道連到哪個 URL 會呼叫這個 view 呢？這就是 Django URLs 會處理的事情。讓我們打開 blog/urls.py 這個檔案，在 urlpatterns 當中加入以下的 code
 
 ```python
-urlpatterns = patterns('',
-    ...
-    url(r'^$', 'article.views.home'),
-)
-```
-
-在這邊，我們可以看到我們使用了一個 [url function](https://docs.djangoproject.com/en/1.6/ref/urls/#django.conf.urls.url) ，有三個傳入值，第一個傳入值是個 regular expression，在此我們傳入一個空字串，也就是會對應道 url 當中沒有任何東西的時候。兒第二個傳入值是個 view function 的位置，這邊我們是傳入剛剛寫的 article.views.home，你也可以這樣寫：
-
-```
 from article.views import home
 
-urlpatterns = patterns('',
-    ...
-    url(r'^$', home),
-)
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', home),
+]
 ```
 
-這樣可以達到一樣的效果。
+在這邊，我們可以看到我們使用了一個 [path function](https://docs.djangoproject.com/en/2.0/ref/urls/#path) ，有三個傳入值，第一個傳入值是 route，在此我們傳入一個空字串，也就是會對應到 url 當中沒有任何東西的時候。而第二個傳入值是個 view function 的位置，這邊我們是傳入剛剛寫的 article.views.home
 
 接著切換到你的 terminal，重新輸入
 
 ```
-python manage.py runserver
+pipenv run python manage.py runserver
 ```
 
 打開你的瀏覽器，開啓 [http://localhost:8000](http://localhost:8000)，應該就會看到 Hello World! 出現！
