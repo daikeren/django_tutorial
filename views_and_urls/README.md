@@ -37,7 +37,7 @@ urlpatterns = [
 ]
 ```
 
-在這邊，我們可以看到我們使用了一個 [path function](https://docs.djangoproject.com/en/2.0/ref/urls/#path) ，有三個傳入值，第一個傳入值是 route，在此我們傳入一個空字串，也就是會對應到 url 當中沒有任何東西的時候。而第二個傳入值是個 view function 的位置，這邊我們是傳入剛剛寫的 article.views.home
+在這邊，我們可以看到我們使用了一個 [path function](https://docs.djangoproject.com/en/2.0/ref/urls/#path) ，有兩個傳入值，第一個傳入值是 route，在此我們傳入一個空字串，也就是會對應到 url 當中沒有任何東西。而第二個傳入值是個 view function 的位置，這邊我們是傳入剛剛寫的 `article.views.home`
 
 接著切換到你的 terminal，重新輸入
 
