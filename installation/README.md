@@ -59,12 +59,44 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
+## 安裝 pipenv
+
+如果之前你有接觸過 python，你可能會聽過 virtualenv 這個拿來管理 Python 虛擬環境的套件。[Kenneth Reitz](https://github.com/kennethreitz) 開發的 [pipenv](https://github.com/pypa/pipenv) 讓我們可以更加方便的管理 Python 的開發環境。關於 pipenv 更詳細的介紹，可以看 pipenv 的[官網](https://docs.pipenv.org/)。
+
+如果使用 MacOS，可以輸入底下的指令安裝
+
+```shell
+brew install pipenv
+```
+如果使用 ubuntu，可以輸入底下的指令安裝
+
+```shell
+sudo apt install software-properties-common python-software-properties
+sudo add-apt-repository ppa:pypa/ppa
+sudo apt update
+sudo apt install pipenv
+```
+
+或是你也可以直接透過 pip 安裝
+
+```shell
+pip install pipenv
+```
+
+如果輸入 `pipenv --version` 可以看到
+
+```shell
+pipenv, version 9.0.0
+```
+
+或是更高的版本，那麼就代表你裝好了 pipenv。
+
 ## Install Django
 
 安裝 Django 十分簡單，只要透過 pip 就可以完成。在 terminal 底下輸入：
 
 ```
-pip install django
+pipenv install django
 ```
 
 便會下載最新版的 django 並且完成安裝。
