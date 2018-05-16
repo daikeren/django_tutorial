@@ -17,15 +17,14 @@ DATABASES = {
 }
 ```
 
-在預設設定中，Django 指定了 database engine 為 sqlite3，並將它放在 `BASE_DIR` 這個目錄（代表你的專案最外層目錄）。你也可以使用其他資料庫，官方支援的除了 SQLite 外尚有 PostgreSQL、MySQL 與 Oracle，另外也有一些非官方的套件可以支援其他資料庫。大部份的資料庫系統中，通常需要指定 database 名稱、使用者、密碼、HOST 以及 PORT，但在這裡我們為了方便說明起見，直接使用預設的 SQLite 設定。
-
+在預設設定中，Django 指定了 database engine 為 sqlite3，並將它放在 `BASE_DIR` 這個目錄（代表你的專案最外層目錄）。你也可以使用其他資料庫，官方支援的除了 SQLite 外尚有 PostgreSQL、MySQL 與 Oracle，另外也有一些非官方的套件可以支援其他資料庫。大部份的資料庫系統中，通常需要指定 database 名稱、使用者、密碼、HOST 以及 PORT，在這裡我們為了方便說明起見，直接使用預設的 SQLite 設定。
 
 
 ## Django Model
 
 在 Django 當中，我們是透過 Django Model 來跟資料庫做互動。在這邊，我們透過寫 Django Model，讓資料庫能夠產生相對應的 Table，關於 Model 基本的概念如下：
 
-* 每一個 Django Model 都繼承自 django.db.models.Model
+* 每一個 Django Model 都繼承自 `django.db.models.Model`
 * 在 Model 當中的每一個 attribute 都代表了一個 database field
 * Django 讓我們可以透過 Model API 來執行 database query，這代表你可以儘量不用寫 SQL
 
@@ -33,31 +32,46 @@ DATABASES = {
 
 關於 Model 的資訊，我們都會放在 APP 目錄當中的 models.py 裡面。打開 articles/models.py，輸入
 
+
 ```python
 from django.db import models
 
 class Category(models.Model):
-    name = models.CharField(u'Name', max_length=50)
+    name = models.CharField(max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 class Article(models.Model):
-    content = models.TextField(u'Content')
-    title = models.CharField(u'Title', max_length=50)
-    category = models.ForeignKey('Category', blank=True, null=True)
+    content = models.TextField()
+    title = models.CharField(max_length=50)
+    category = models.ForeignKey('Category', blank=True, null=True, on_delete=models.SET_NULL)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 ```
 
+
 在此，我們建立了兩個 Model，一個是 Category，代表了類別，另外一個則是 Article，代表了文章。這兩個 Model 都繼承自 django.db.models.Model。
 
-首先先讓我們看看 Category 這個 Model。這個 Model 我們宣告了一個叫做 name 的 attribute，它的形態是 [models.CharField](https://docs.djangoproject.com/en/dev/ref/models/fields/#charfield)，另外 max_length 則代表了 name 最大長度為 50。
+首先先讓我們看看 Category 這個 Model。這個 Model 我們宣告了一個叫做 name 的 attribute，它的形態是 `[models.CharField](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.CharField)`，另外 max_length 則代表了 name 最大長度為 50。
 
-此外，我們也宣告了一個 ```__unicode__(self)``` function 來表示 Category 物件要如何以 unicode 表示自己，在此我們直接用類別的名字做表示。
+此外，我們也宣告了一個 `__str__(self)` function 來表示 Category 物件要如何以 unicode 表示自己，在此我們直接用類別的名字做表示。
 
-Article 這個 Model 跟 Category Model 很類似，我們有三個屬性，content 代表文章內容，title 代表標題，category 是代表 Article 跟 Category 會建立起資料庫當中的關聯性，在這邊我們用 ForeignKey 來建立起關係。
+Article 這個 Model 跟 Category Model 很類似，我們有三個屬性，content 代表文章內容，title 代表標題，category 是代表 Article 跟 Category 會建立起資料庫當中的關聯性，在這邊我們用 ForeignKey 來建立起關係。我們可以看到 `[models.ForeignKey](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.ForeignKey)` 裡面傳了四個參數，分別如下：
+
+* `Category`: 代表要跟那個 Model 建立起 ForeignKey 的關係
+* `[null](https://docs.djangoproject.com/en/2.0/ref/models/fields/#null)`: 這個值代表着在資料庫當中，這個欄位可以以 NULL 存空值。注意如果是在 CharField 或是 TextField 當中，通常我們不會設定 `null=True`。原因是在 Django 當中，我們通常會用空字串來表達沒有值。如果又多設定了 `null=True` 的話，我們在判定這個欄位有沒有值的時候就會有兩種可能的情況要判斷。
+* `[blank](https://docs.djangoproject.com/en/2.0/ref/models/fields/#blank)`: 這個值代表欄位是否可以允許是空的。注意一下這個值跟 null 是有不同的，null 是在資料庫層級來做判斷，但是 blank 則是跟驗證 (validation) 相關。如果 `blank=True`，那麼代表當我們使用表單 (form) 的時候可以允許這個欄位是空的，否則這個欄位就是必須的。等到後面的 Django Form 會有更詳細的說明。
+* `[on_delete](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.ForeignKey.on_delete)`: 這邊是設定當這個 model 被刪除的時候，跟他有關聯的 Model 預設行爲爲何。讓我們用上面的例子來說明不同的參數設定在當 Category 被刪除的時候，會造成的行爲：
+
+    * `CASCADE`: 相關的 Article 也會被刪除
+    * `PROTECT`: 如果還有跟 Category 有關聯的 Article，那麼會丟出一個 `[ProtectedError](https://docs.djangoproject.com/en/2.0/ref/exceptions/#django.db.models.ProtectedError)`
+    * `SET_NULL`: 會把 ForeignKey 設成 null
+    * `SET_DEFAULT`: 會把 ForeignKey 的值設成預設的值
+    * `SET()`: 會把 ForeignKey 的值設成指定的值
+    * `DO_NOTHING`: 什麼事情都不做。
+
 
 ## 實際建立資料表
 
@@ -65,18 +79,23 @@ Article 這個 Model 跟 Category Model 很類似，我們有三個屬性，cont
 
 要把 table 生出來一樣要使用 manage.py 這個指令，我們透過 syncdb 來產生 table。syncdb 會根據 settings.py 裡面 INSTALLED_APPS 當中的 Django APP 當中的 models.py 中的 Model 生出相對應的 table，打開你的 shell 輸入：
 
-```
-python manage.py syncdb
+```shell
+pipenv run python manage.py makemigrations
+pipenv run python manage.py migrate
 ```
 
-就會完成生成 table 的生成。在這邊，你會看到因為我們在 INSTALLED_APPS 當中有使用 Django 的 auth 系統，因此 Django 會問你是否需要創建 superuser，在這邊你可以輸入一個你喜歡的 username 還有密碼，在下一章節會使用到。
+這邊我們可以看到兩個指令，分別危 makemigartions 以及 migrate，分別介紹如下：
+
+* `[makemigartions](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-makemigrations)` 會根據你對 models.py 當中欄位以及 Model 的新增、刪除或是修改建立新的 migration 檔案，當 migrate 指令執行的時候時可以照著這份紀錄更新資料庫。
+* `[migrate](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-migrate)` 會建立或更新資料表裡面的內容，也就是實際去執行剛剛 makemigrations 之後產生的 python 程式，將你對 models.py 裡的修改跟實際的資料庫欄位同步。
+
 
 ## 讓我們來玩玩 Model 吧
 
-在 syncdb 之後，我們在 terminal 中輸入
+在 migrate 之後，我們在 terminal 中輸入
 
 ```
-python manage.py shell
+pipenv run python manage.py shell
 ```
 
 來開啟一個跟原生 python 很相像的 interactive shell，跟一般 python 的差別只有我們可以在這個 shell 當中存取 Django Project 當中的 Model 等等資訊。
@@ -98,7 +117,7 @@ python manage.py shell
 ```python
 >>> Article.objects.all()
 >>> for article in Article.objects.all():
->>>     print article.title
+>>>     print(article.title)
 ```
 
 取出一個 title 為 "article 1" 的 Model，修改它的 title 之後再儲存。
