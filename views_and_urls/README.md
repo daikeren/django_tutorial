@@ -51,3 +51,33 @@ pipenv run python manage.py runserver
 
 現在你已經會寫一個簡單的 view 還有 url 了，來再新增一個 view function，讓我們連到 http://localhost:8000/now 的時候會輸出現在的時間吧！
 
+## 解答
+
+要達到目的，我們要做兩件事情
+
+1. 新增一個顯示時間的 view function
+
+打開 article/views.py 這個檔案
+
+```python
+from datetime import datetime
+
+
+def now(request):
+    return HttpResponse(datetime.now())
+```
+
+2. 把 /now 這個 url 跟上面的 view function 做連結
+
+打開 blog/urls.py
+
+```python
+from article.views import now
+
+urlpatterns = [
+    ...
+    path('now', now),
+    ...
+]
+
+```
