@@ -132,5 +132,5 @@ pipenv run python manage.py shell
 
 ## 練習
 
-* 除了我們有用到的 all(), create(), get() 等等方法之外，看看還有什麼 Queryset API 可以玩呢？來玩玩看 delete(), filter() 吧。
-* 每個 Article object 除了我們自定的那些欄位之外還有什麼欄位呢？看看 pk 這個欄位吧！
+* 除了我們有用到的 all(), create(), get() 等等方法之外，看看還有什麼 Queryset API 可以玩呢？玩玩看 `[delete()](https://docs.djangoproject.com/en/2.0/topics/db/queries/#deleting-objects)`, `[filter()](https://docs.djangoproject.com/en/2.0/topics/db/queries/#retrieving-specific-objects-with-filters)`
+* 每個 Article object 除了我們自定的那些欄位之外還有什麼欄位呢？看看 pk 這個欄位
