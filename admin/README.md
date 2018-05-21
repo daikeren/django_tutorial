@@ -17,17 +17,23 @@ INSTALLED_APPS = (
 
 ```python
 from django.contrib import admin
-admin.autodiscover()
 
-urlpatterns = pattern('',
+
+urlpatterns = [
     ...
-    url(r'^admin/', include(admin.site.urls)),
-)
+    path('admin/', admin.site.urls),
+    ...
+]
 ```
 
-其中 include 這行就是代表把 Django admin 的相關 url 都引入。
 
-接著造訪 http://localhost:8000/admin ，使用你在上一章當中創建的 user/password 登入，如果一切順利的話你會看到 Django Admin 的畫面。不過這個時候 Django Admin 還看不到我們建立的 Category, Article 這兩個 Model，所以我們要告訴 Django Admin 這件事情。
+接著造訪 http://localhost:8000/admin ，你會發現需要輸入帳號以及密碼。這時候在 termminal 底下輸入
+
+```shell
+pipenv run python ./manage.py createsuperuser
+```
+
+創建一個 superuser，創好之後在 admin 界面輸入帳號以及密碼可以登入。如果一切順利的話你會看到 Django Admin 的畫面。不過這個時候 Django Admin 還看不到我們建立的 Category, Article 這兩個 Model，所以我們要告訴 Django Admin 這件事情。
 
 在 article 目錄底下，新增 admin.py，內容如下：
 
@@ -40,6 +46,7 @@ admin.site.register(Category)
 ```
 
 這時候重新 reload http://localhost:8000/admin，應該就會看到上面出現 Article 跟 Category 的 admin 界面，我們就可以在這邊做創造、讀取、更新、刪除的動作了。
+
 
 ## 練習
 
