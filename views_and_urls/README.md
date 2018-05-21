@@ -33,7 +33,7 @@ from article.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('home', home),
 ]
 ```
 
@@ -45,7 +45,7 @@ urlpatterns = [
 pipenv run python manage.py runserver
 ```
 
-打開你的瀏覽器，開啓 [http://localhost:8000](http://localhost:8000)，應該就會看到 Hello World! 出現！
+打開你的瀏覽器，開啓 [http://localhost:8000/home](http://localhost:8000/home)，應該就會看到 Hello World! 出現！
 
 ## 練習
 
@@ -79,5 +79,4 @@ urlpatterns = [
     path('now', now),
     ...
 ]
-
 ```

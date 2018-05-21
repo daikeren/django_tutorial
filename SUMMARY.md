@@ -13,4 +13,3 @@
 * [Django 的第三方套件們](third_party_app/README.md)
 * [把你的 Django Project 丟上雲端](deploy_to_cloud/README.md)
 * [這只是開始...](remark/README.md)
-
