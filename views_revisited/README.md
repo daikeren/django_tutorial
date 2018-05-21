@@ -1,4 +1,4 @@
-# Django Views & Django URL 再訪
+# Django Views, Django URL & Django Template 再訪
 
 到目前為止我們了解到 Django URL, Django View, Django Model 還有 Django Template 的基礎，在這個階段我們把之前所學來做個整合吧！我們在這邊的目標是讓網站能夠根據 URL 為 article/1/, article/2/, ..., 等等不同的 URL，把相對應 primary key 的 article 從資料庫中取出來並且把資料 response 到瀏覽器上。
 

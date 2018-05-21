@@ -8,7 +8,7 @@
 * [Django Template](template/README.md)
 * [Django 與資料庫的互動 - Django Model](models/README.md)
 * [Django 最吸引人的 feature 之一 - Django Admin](admin/README.md)
-* [Django Views & Django URL 再訪](views_revisited/README.md)
+* [Django Views, Django URL & Django Template 再訪](views_revisited/README.md)
 * [Django Forms & Django Views 的結合](forms/README.md)
 * [Django 的第三方套件們](third_party_app/README.md)
 * [把你的 Django Project 丟上雲端](deploy_to_cloud/README.md)
