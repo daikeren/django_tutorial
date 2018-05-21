@@ -118,7 +118,7 @@ def article_list(request):
 This Is A Book
 ```
 
-除了 for 跟 title 之外，Django 也內建了許多 [template tags 以及 template filters](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/)，我們可以依據我們的需求選用。以下列出一些比較常用的[template tags 以及 template filters](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/)。
+除了 for 跟 title 之外，Django 也內建了許多 [template tags 以及 template filters](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/)，我們可以依據我們的需求選用。以下列出一些比較常用的 [template tags 以及 template filters](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/)。
 
 * for
 * if
