@@ -1,0 +1,433 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Django Template · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../models/" />
+    
+    
+    <link rel="prev" href="../views_and_urls/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    Django 簡介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../installation/">
+            
+                <a href="../installation/">
+            
+                    
+                    安裝 Django
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../project/">
+            
+                <a href="../project/">
+            
+                    
+                    Django Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../apps/">
+            
+                <a href="../apps/">
+            
+                    
+                    Django APPs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../views_and_urls/">
+            
+                <a href="../views_and_urls/">
+            
+                    
+                    Django Views & Django URLs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Django Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../models/">
+            
+                <a href="../models/">
+            
+                    
+                    Django 與資料庫的互動 - Django Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../admin/">
+            
+                <a href="../admin/">
+            
+                    
+                    Django 最吸引人的 feature 之一 - Django Admin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../views_revisited/">
+            
+                <a href="../views_revisited/">
+            
+                    
+                    Django Views, Django URL & Django Template 再訪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../forms/">
+            
+                <a href="../forms/">
+            
+                    
+                    Django Forms & Django Views 的結合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../third_party_app/">
+            
+                <a href="../third_party_app/">
+            
+                    
+                    Django 的第三方套件們
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../deploy_to_cloud/">
+            
+                <a href="../deploy_to_cloud/">
+            
+                    
+                    把你的 Django Project 丟上雲端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../remark/">
+            
+                <a href="../remark/">
+            
+                    
+                    這只是開始...
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Django Template</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="django-template">Django Template</h1>
+<p>&#x5728;&#x524D;&#x4E00;&#x7AE0;&#x7576;&#x4E2D;&#x6211;&#x5011;&#x900F;&#x904E;&#x5728; view &#x7576;&#x4E2D;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x8F38;&#x51FA;&#x5B57;&#x4E32;&#x7684;&#x65B9;&#x5F0F;&#x4F86;&#x5E6B;&#x52A9;&#x6211;&#x5011;&#x8F38;&#x51FA; HTML&#xFF0C;&#x4E0D;&#x904E;&#x9019;&#x6A23;&#x6703;&#x6709;&#x4E00;&#x500B;&#x5F88;&#x5927;&#x7684;&#x58DE;&#x8655;&#xFF1A;&#x901A;&#x5E38;&#x4F86;&#x8AAA; HTML &#x7684;&#x90E8;&#x5206;&#x53EF;&#x80FD;&#x662F;&#x7531;&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5E2B;&#x5BEB;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x5011;&#x628A; HTML &#x5BEB;&#x5728; view &#x7576;&#x4E2D;&#xFF0C;&#x6703;&#x9020;&#x6210;&#x7DAD;&#x8B77;&#x4EE5;&#x53CA;&#x4FEE;&#x6539;&#x4E0A;&#x9762;&#x7684;&#x56F0;&#x96E3;&#xFF0C;&#x56E0;&#x6B64; Django &#x63D0;&#x4F9B;&#x4E86; Django Template &#x4F86;&#x5E6B;&#x52A9;&#x6211;&#x5011;&#x89E3;&#x6C7A;&#x9019;&#x90E8;&#x5206;&#x7684;&#x554F;&#x984C;&#x3002;</p>
+<h2 id="&#x7B2C;&#x4E00;&#x500B;-template">&#x7B2C;&#x4E00;&#x500B; Template</h2>
+<p>&#x8B93;&#x6211;&#x5011;&#x5728;&#x6211;&#x5011;&#x7684; article &#x76EE;&#x9304;&#x5E95;&#x4E0B;&#x5EFA;&#x7ACB;&#x4E00;&#x500B; templates &#x76EE;&#x9304;&#x3002;&#x88E1;&#x9762;&#x65B0;&#x589E;&#x4E00;&#x500B; now.html &#x6A94;&#x6848;&#xFF0C;&#x5167;&#x5BB9;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>
+This is an example template
+<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{ now }}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x5728;&#x9019;&#x908A;&#xFF0C;&#x6211;&#x5011;&#x767C;&#x73FE;&#x6709;&#x500B;&#x7279;&#x5225;&#x7684;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{ now }}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<p>&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x9019;&#x908A;&#x7528; <code>{{ now }}</code> &#x4EE3;&#x8868;&#x7684;&#x662F;&#x9019;&#x90E8;&#x5206;&#x6703;&#x7531;&#x5F9E; django view &#x7576;&#x4E2D;&#x50B3;&#x5165;&#x7684; <code>now</code> &#x4F86;&#x505A;&#x8B8A;&#x6578;&#x7684;&#x4EE3;&#x63DB;</p>
+<p>&#x63A5;&#x8457;&#xFF0C;&#x6253;&#x958B;&#x6211;&#x5011;&#x4E4B;&#x524D;&#x5BEB;&#x7684; article/views.py&#xFF0C;&#x628A;&#x4E4B;&#x524D;&#x5BEB;&#x7684; now view &#x6539;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">now</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;now.html&quot;</span>, {<span class="hljs-string">&apos;now&apos;</span>: datetime.now()})
+</code></pre>
+<p>&#x6211;&#x5011; import &#x4E86; <a href="https://docs.djangoproject.com/en/2.0/topics/http/shortcuts/#render" target="_blank">django.shortcuts.render</a>&#xFF0C;&#x9019;&#x500B; function &#x53EF;&#x4EE5;&#x5E6B;&#x52A9;&#x6211;&#x5011;&#x8B80;&#x53D6; template &#x4E4B;&#x5F8C;&#xFF0C;&#x628A;&#x8B8A;&#x6578;&#x4EE5; python dictionary &#x7684;&#x65B9;&#x5F0F;&#x50B3;&#x5165; template &#x7576;&#x4E2D;&#xFF0C;&#x6700;&#x5F8C;&#x518D; render &#x51FA;&#x4F86;&#x4E26;&#x4E14;&#x56DE;&#x50B3;&#x5230;&#x700F;&#x89BD;&#x5668;&#x4E2D;&#x3002;&#x6253;&#x958B; <a href="http://localhost:8000/now" target="_blank">http://localhost:8000/now</a> &#x770B;&#x770B;&#xFF0C;&#x5982;&#x679C;&#x90FD;&#x6C92;&#x505A;&#x932F;&#x7684;&#x8A71;&#x61C9;&#x8A72;&#x6703;&#x51FA;&#x73FE;&#x985E;&#x4F3C;&#x4EE5;&#x4E0B;&#x7684;&#x756B;&#x9762;&#x3002;</p>
+<p><img src="img/now.png" alt="now"></p>
+<p>&#x5728;&#x9019;&#x908A;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x6703;&#x89BA;&#x5F97;&#x597D;&#x50CF; Django Template &#x4E5F;&#x6C92;&#x505A;&#x4EC0;&#x9EBC;&#x4E8B;&#x60C5;&#xFF0C;&#x53EA;&#x662F;&#x500B;&#x7C21;&#x55AE;&#x7684;&#x8B8A;&#x6578;&#x53D6;&#x4EE3;&#x800C;&#x5DF2;&#x3002;&#x4E0D;&#x904E;&#x5176;&#x5BE6; Django Template &#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;<a href="https://docs.djangoproject.com/en/2.0/ref/templates/builtins/" target="_blank">&#x5167;&#x5EFA;&#x7684; template tag &#x8DDF; template filter</a>&#xFF0C;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x4F60;&#x53EF;&#x4EE5;&#x64F4;&#x5145; Django Template &#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x8AAA;&#x6211;&#x5011;&#x9019;&#x908A;&#x5E0C;&#x671B;&#x4FEE;&#x6539;&#x4E00;&#x4E0B; <code>{{ now }}</code> &#x6240;&#x8F38;&#x51FA;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x539F;&#x672C;&#x662F;&#x7684; <code>May 17, 2018, 7:22am</code> &#x7684;&#x683C;&#x5F0F;&#x60F3;&#x6539;&#x6210; <code>Thu 17 May 2018</code> &#x9019;&#x7A2E;&#x6A23;&#x5B50;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x628A;&#x539F;&#x672C;&#x7684; <code>{{ now }}</code> &#x6539;&#x6210; <code>{{ now|date:&quot;D d M Y&quot; }}</code>&#x3002;&#x9019;&#x908A;&#x6211;&#x5011;&#x4F7F;&#x7528;&#x4E86; <code>[date](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#date)</code> &#x9019;&#x500B; template tag&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x53C3;&#x8003;&#x8AAA;&#x660E;&#x6539;&#x6210;&#x4F60;&#x60F3;&#x8981;&#x7684;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x9019;&#x908A;&#x6211;&#x5011;&#x5F88;&#x7C21;&#x55AE;&#x7684;&#x5BEB;&#x4E86;&#x7B2C;&#x4E00;&#x500B; template&#xFF0C;&#x4E5F;&#x7528;&#x4E86;&#x4E00;&#x500B; template tag&#xFF0C;&#x5728;&#x5F8C;&#x9762;&#x6211;&#x5011;&#x6703;&#x66F4;&#x8A73;&#x7D30;&#x7684;&#x4ECB;&#x7D39;&#x5176;&#x4ED6;&#x7684; template &#x61C9;&#x7528;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../views_and_urls/" class="navigation navigation-prev " aria-label="Previous page: Django Views & Django URLs">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../models/" class="navigation navigation-next " aria-label="Next page: Django 與資料庫的互動 - Django Model">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Django Template","level":"1.7","depth":1,"next":{"title":"Django 與資料庫的互動 - Django Model","level":"1.8","depth":1,"path":"models/README.md","ref":"models/README.md","articles":[]},"previous":{"title":"Django Views & Django URLs","level":"1.6","depth":1,"path":"views_and_urls/README.md","ref":"views_and_urls/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-312079-14"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"template/README.md","mtime":"2018-05-22T02:36:42.660Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-23T07:25:11.266Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

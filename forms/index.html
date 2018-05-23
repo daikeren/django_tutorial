@@ -1,0 +1,463 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Django Forms & Django Views 的結合 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../third_party_app/" />
+    
+    
+    <link rel="prev" href="../views_revisited/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    Django 簡介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../installation/">
+            
+                <a href="../installation/">
+            
+                    
+                    安裝 Django
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../project/">
+            
+                <a href="../project/">
+            
+                    
+                    Django Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../apps/">
+            
+                <a href="../apps/">
+            
+                    
+                    Django APPs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../views_and_urls/">
+            
+                <a href="../views_and_urls/">
+            
+                    
+                    Django Views & Django URLs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../template/">
+            
+                <a href="../template/">
+            
+                    
+                    Django Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../models/">
+            
+                <a href="../models/">
+            
+                    
+                    Django 與資料庫的互動 - Django Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../admin/">
+            
+                <a href="../admin/">
+            
+                    
+                    Django 最吸引人的 feature 之一 - Django Admin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../views_revisited/">
+            
+                <a href="../views_revisited/">
+            
+                    
+                    Django Views, Django URL & Django Template 再訪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Django Forms & Django Views 的結合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../third_party_app/">
+            
+                <a href="../third_party_app/">
+            
+                    
+                    Django 的第三方套件們
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../deploy_to_cloud/">
+            
+                <a href="../deploy_to_cloud/">
+            
+                    
+                    把你的 Django Project 丟上雲端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../remark/">
+            
+                <a href="../remark/">
+            
+                    
+                    這只是開始...
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Django Forms & Django Views 的結合</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="django-forms--django-views-&#x7684;&#x7D50;&#x5408;">Django Forms &amp; Django Views &#x7684;&#x7D50;&#x5408;</h1>
+<p>&#x5728;&#x524D;&#x9762;&#x6211;&#x5011;&#x4ECB;&#x7D39;&#x4E86; Django Admin &#x53EF;&#x4EE5;&#x4F86;&#x5C0D;&#x6211;&#x5011;&#x7684; Model &#x505A; CRUD &#x7684;&#x52D5;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x6216;&#x8A31;&#x4F60;&#x9084;&#x662F;&#x6703;&#x5E0C;&#x671B;&#x81EA;&#x5DF1;&#x624B;&#x523B;&#x4E00;&#x500B;&#x65B0;&#x589E;&#x6587;&#x7AE0;&#x7684;&#x754C;&#x9762;&#xFF0C;&#x90A3;&#x9EBC;&#x8A72;&#x600E;&#x9EBC;&#x505A;&#x5462;&#xFF1F;&#x50B3;&#x7D71;&#x7684; framework &#x53EF;&#x80FD;&#x6703;&#x9700;&#x8981;&#x8655;&#x7406;&#x4EE5;&#x4E0B;&#x7684;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<ul>
+<li>&#x7528; HTML &#x523B;&#x500B; form</li>
+<li>&#x8655;&#x7406; HTTP POST request</li>
+<li>&#x6AA2;&#x67E5;&#x8868;&#x55AE;&#x6B04;&#x4F4D;&#x5167;&#x5BB9;&#x662F;&#x5426;&#x6B63;&#x78BA;</li>
+<li>&#x628A;&#x78BA;&#x8A8D;&#x904E;&#x7684;&#x8CC7;&#x6599;&#x5B58;&#x9032; database &#x7576;&#x4E2D;</li>
+</ul>
+<p>&#x5728; Django &#x7576;&#x4E2D;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5F88;&#x8F15;&#x9B06;&#x5730;&#x505A;&#x5230;&#x9019;&#x4EF6;&#x4E8B;&#x60C5;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x5148;&#x8B93;&#x6211;&#x5011;&#x4ECB;&#x7D39; Django Form &#x9019;&#x500B; Django &#x7576;&#x4E2D;&#x5F88;&#x91CD;&#x8981;&#x7684; feature&#x3002;</p>
+<h2 id="django-form">Django Form</h2>
+<p>&#x7576;&#x6211;&#x5011;&#x6709;&#x4E86;&#x4E00;&#x500B; Model &#x4E4B;&#x5F8C;&#xFF0C;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x5728;&#x9801;&#x9762;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x90A3;&#x500B; Model&#xFF0C;&#x6700;&#x7C21;&#x55AE;&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x751F;&#x51FA;&#x4E00;&#x500B;&#x8868;&#x55AE;&#xFF0C;&#x8868;&#x55AE;&#x4E0A;&#x9762;&#x6709; Model &#x6240;&#x9700;&#x8981;&#x7684;&#x6B04;&#x4F4D;&#x3002;&#x7576;&#x4F7F;&#x7528;&#x8005;&#x586B;&#x597D;&#x6B04;&#x4F4D;&#x6309;&#x4E0B;&#x9001;&#x51FA;&#x4E4B;&#x5F8C;&#xFF0C;
+&#x518D;&#x7531; web framework &#x8655;&#x7406;&#x9001;&#x9032;&#x4F86;&#x7684;&#x8CC7;&#x6599;&#xFF0C;&#x505A;&#x5B8C; validation&#xFF0C;&#x5B58;&#x9032; database&#x3002;</p>
+<p>&#x5728; Django &#x7576;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86; Django Form &#x8B93;&#x4F60;&#x53EF;&#x4EE5;&#x5F88;&#x8F15;&#x9B06;&#x7684;&#x505A;&#x5B8C;&#x9019;&#x4EF6;&#x4E8B;&#x60C5;&#xFF0C;&#x8B93;&#x6211;&#x5011;&#x4F86;&#x770B;&#x770B;&#x600E;&#x9EBC;&#x505A;&#x5427;&#xFF01;</p>
+<p>&#x9996;&#x5148;&#x8B93;&#x6211;&#x5011;&#x5728; article/views.py &#x7576;&#x4E2D;&#x65B0;&#x589E;&#x4EE5;&#x4E0B;&#x7684;&#x7A0B;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> forms
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArticleForm</span><span class="hljs-params">(forms.ModelForm)</span>:</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        model = Article
+        fields = [<span class="hljs-string">&apos;title&apos;</span>, <span class="hljs-string">&apos;content&apos;</span>, ]
+</code></pre>
+<p>&#x5982;&#x6B64;&#x6211;&#x5011;&#x5C31;&#x5275;&#x9020;&#x4E86;&#x4E00;&#x500B;&#x4F9D;&#x7167; Article Model &#x7684; Django Form &#x985E;&#x5225;&#xFF0C;&#x5B83;&#x7E7C;&#x627F;&#x81EA; <a href="https://docs.djangoproject.com/en/2.0/topics/forms/modelforms/" target="_blank">ModelForm</a> &#x800C;&#x8868;&#x55AE;&#x7684;&#x6B04;&#x4F4D;&#x662F; &apos;title&apos; &#x8DDF; &apos;content&apos; &#x9019;&#x5169;&#x500B;&#x6B04;&#x4F4D;&#x3002;</p>
+<p>&#x90A3;&#x9EBC;&#x6211;&#x5011;&#x8981;&#x5982;&#x4F55;&#x4F86;&#x4F7F;&#x7528; ArticleForm &#x5462;&#xFF1F;&#x7576;&#x7136;&#x662F;&#x5728; view function &#x9084;&#x6709; template &#x7576;&#x4E2D;&#x4F86;&#x4F7F;&#x7528;&#x3002;&#x5728; article/views.py &#x7576;&#x4E2D;&#x65B0;&#x589E;&#x4EE5;&#x4E0B;&#x7684;&#x7A0B;&#x5F0F;&#x78BC;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.http <span class="hljs-keyword">import</span> HttpResponseRedirect
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">article_form</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&apos;POST&apos;</span>:
+        form = ArticleForm(request.POST)
+        <span class="hljs-keyword">if</span> form.is_valid():
+            new_article = form.save()
+            <span class="hljs-keyword">return</span> HttpResponseRedirect(<span class="hljs-string">&apos;/article/&apos;</span> + str(new_article.pk))
+
+    form = ArticleForm()
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;article_form.html&apos;</span>, {<span class="hljs-string">&apos;form&apos;</span>: form})
+</code></pre>
+<p>&#x5728;&#x9019;&#x908A;&#xFF0C;&#x6211;&#x5011;&#x5B9A;&#x7FA9;&#x4E86;&#x4E00;&#x500B; create view&#xFF0C;&#x63A5;&#x8457;&#x6211;&#x5011;&#x900F;&#x904E; <a href="https://docs.djangoproject.com/en/2.0/ref/request-response/#django.http.HttpRequest.method" target="_blank">request.method</a> &#x4F86;&#x5224;&#x65B7;&#x63A5;&#x4E0B;&#x4F86;&#x7684;&#x884C;&#x70BA;&#x3002;&#x5982;&#x679C;&#x662F;&#x4E00;&#x822C;&#x7684; method&#xFF0C;&#x662F;&#x5275;&#x5EFA;&#x4E00;&#x500B; ArticleForm &#x7684; instance&#xFF0C;&#x4E26;&#x4E14;&#x628A;&#x5B83;&#x50B3;&#x9032;&#x53BB; create_article.html &#x7684; template &#x7576;&#x4E2D;&#x3002;&#x5982;&#x679C; method &#x70BA; POST&#xFF0C;Django request &#x6703;&#x628A; POST &#x7684;&#x8CC7;&#x6599;&#x90FD;&#x653E;&#x5230; <a href="https://docs.djangoproject.com/en/2.0/ref/request-response/#django.http.HttpRequest.POST" target="_blank">request.POST</a> &#x7576;&#x4E2D;&#xFF0C;&#x6211;&#x5011;&#x518D;&#x628A; request.POST &#x50B3;&#x5165; ArticleForm &#x7576;&#x4F5C; ArticleForm &#x7684; constructor&#x3002;&#x63A5;&#x8457;&#x900F;&#x904E; <code>is_valid()</code> &#x9019;&#x500B; method &#x4F86;&#x6AA2;&#x67E5;&#x8F38;&#x5165;&#x8CC7;&#x6599;&#x662F;&#x5426;&#x5408;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x7684;&#x8A71;&#x5C31;&#x5B58;&#x8D77;&#x4F86;&#xFF0C;&#x6700;&#x5F8C;&#x518D;&#x628A;&#x7DB2;&#x9801; redirect &#x5230;&#x9019;&#x7BC7;&#x7684;&#x7DB2;&#x5740;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x4F86;&#x6211;&#x60F3;&#x5927;&#x5BB6;&#x4E5F;&#x77E5;&#x9053;&#x8981;&#x5E79;&#x4EC0;&#x9EBC;&#x4E86;&#xFF0C;&#x65B0;&#x589E; article/templates/article_form.html &#x9019;&#x500B;&#x6A94;&#x6848;&#x3002;&#x5167;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;.&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span>&gt;</span>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x9019;&#x908A;&#x6211;&#x5011;&#x900F;&#x904E;&#x4E86; form.as_p &#x9019;&#x500B; method &#x628A; form &#x7D66; render &#x51FA;&#x4F86;&#xFF0C;&#x53E6;&#x5916;&#x5728;&#x9019;&#x908A;&#x6211;&#x5011;&#x770B;&#x5230;&#x4E86; <a href="https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#std:templatetag-csrf_token" target="_blank">csrf_token</a> &#x9019;&#x500B;&#x5947;&#x602A;&#x7684; template tag&#xFF0C;&#x9019;&#x500B; template tag &#x7684;&#x610F;&#x7FA9;&#x662F;&#x505A; <a href="https://docs.djangoproject.com/en/2.0/ref/contrib/csrf/" target="_blank">Cross Site Request Forgery protection</a>&#xFF0C;&#x70BA;&#x4E86;&#x9632;&#x6B62;&#x5225;&#x7684;&#x7DB2;&#x7AD9;&#x5C0D;&#x4F60;&#x7684;&#x7AD9;&#x53F0;&#x505A;&#x653B;&#x64CA;&#x3002;&#x7D30;&#x7BC0;&#x6211;&#x5011;&#x5728;&#x9019;&#x908A;&#x4E0D;&#x591A;&#x8AAA;&#xFF0C;&#x53EF;&#x4EE5;&#x53C3;&#x8003; Django &#x5B98;&#x65B9;&#x6587;&#x4EF6;&#x6709;&#x8AAA;&#x660E;&#x3002;&#x9019;&#x908A;&#x53EA;&#x8981;&#x8A18;&#x5F97;&#x7576;&#x4F60;&#x5728;&#x505A; POST &#x7684;&#x6642;&#x5019;&#x8981;&#x8A18;&#x5F97;&#x52A0;&#x4E0A; csrf_token &#x9019;&#x500B; template tag &#x5728; form &#x7576;&#x4E2D;&#x9001;&#x51FA;&#x3002;</p>
+<p>&#x6700;&#x5F8C;&#x6211;&#x5011;&#x518D; blog/urls.py &#x7576;&#x4E2D;&#x52A0;&#x4E0A;&#x4E00;&#x6BB5; code &#x4F86;&#x628A; url &#x8DDF; views &#x4E32;&#x8D77;&#x4F86;&#xFF1A;</p>
+<pre><code class="lang-python">
+<span class="hljs-keyword">from</span> article.views <span class="hljs-keyword">import</span> article_form
+
+
+urlpatterns = [
+    ...
+    path(<span class="hljs-string">&apos;create/&apos;</span>, article.views.article_form),
+    ...
+]
+</code></pre>
+<p>&#x6253;&#x958B;&#x700F;&#x89BD;&#x5668;&#x770B;&#x770B; <a href="http://localhost:8000/create/" target="_blank">http://localhost:8000/create/</a> &#xFF0C;&#x8A66;&#x8A66;&#x770B;&#x4F60;&#x7684;&#x8868;&#x55AE;&#x5427;&#xFF01;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../views_revisited/" class="navigation navigation-prev " aria-label="Previous page: Django Views, Django URL & Django Template 再訪">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../third_party_app/" class="navigation navigation-next " aria-label="Next page: Django 的第三方套件們">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Django Forms & Django Views 的結合","level":"1.11","depth":1,"next":{"title":"Django 的第三方套件們","level":"1.12","depth":1,"path":"third_party_app/README.md","ref":"third_party_app/README.md","articles":[]},"previous":{"title":"Django Views, Django URL & Django Template 再訪","level":"1.10","depth":1,"path":"views_revisited/README.md","ref":"views_revisited/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-312079-14"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"forms/README.md","mtime":"2018-05-22T02:36:42.654Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-23T07:25:11.266Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

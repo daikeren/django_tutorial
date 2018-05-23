@@ -1,0 +1,439 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>把你的 Django Project 丟上雲端 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../remark/" />
+    
+    
+    <link rel="prev" href="../third_party_app/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    Django 簡介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../installation/">
+            
+                <a href="../installation/">
+            
+                    
+                    安裝 Django
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../project/">
+            
+                <a href="../project/">
+            
+                    
+                    Django Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../apps/">
+            
+                <a href="../apps/">
+            
+                    
+                    Django APPs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../views_and_urls/">
+            
+                <a href="../views_and_urls/">
+            
+                    
+                    Django Views & Django URLs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../template/">
+            
+                <a href="../template/">
+            
+                    
+                    Django Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../models/">
+            
+                <a href="../models/">
+            
+                    
+                    Django 與資料庫的互動 - Django Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../admin/">
+            
+                <a href="../admin/">
+            
+                    
+                    Django 最吸引人的 feature 之一 - Django Admin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../views_revisited/">
+            
+                <a href="../views_revisited/">
+            
+                    
+                    Django Views, Django URL & Django Template 再訪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../forms/">
+            
+                <a href="../forms/">
+            
+                    
+                    Django Forms & Django Views 的結合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../third_party_app/">
+            
+                <a href="../third_party_app/">
+            
+                    
+                    Django 的第三方套件們
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    把你的 Django Project 丟上雲端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../remark/">
+            
+                <a href="../remark/">
+            
+                    
+                    這只是開始...
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >把你的 Django Project 丟上雲端</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x628A;&#x4F60;&#x7684;-django-project-&#x4E1F;&#x4E0A;&#x96F2;&#x7AEF;">&#x628A;&#x4F60;&#x7684; Django Project &#x4E1F;&#x4E0A;&#x96F2;&#x7AEF;</h1>
+<p>&#x597D;&#x4E0D;&#x5BB9;&#x6613;&#x505A;&#x4E86;&#x7DB2;&#x7AD9;&#xFF0C;&#x63A5;&#x4E0B;&#x4F86;&#x8B93;&#x6211;&#x5011;&#x628A;&#x6211;&#x5011;&#x7684;&#x7DB2;&#x7AD9;&#x4E1F;&#x4E0A;&#x53BB;&#x8B93;&#x5927;&#x5BB6;&#x770B;&#x770B;&#x3002;&#x5728;&#x9019;&#x908A;&#xFF0C;&#x6211;&#x5011;&#x4F7F;&#x7528;&#x6700;&#x5E38;&#x898B;&#x7684; <a href="https://www.heroku.com/" target="_blank">Heroku</a> &#x4F86;&#x7576;&#x4F5C;&#x6211;&#x5011;&#x7684; hosting&#x3002;Heroku &#x514D;&#x8CBB;&#x7684;&#x984D;&#x5EA6;&#x57FA;&#x672C;&#x4E0A;&#x62FF;&#x4F86;&#x505A;&#x4E9B;&#x5C0F;&#x7684;&#x7DB2;&#x7AD9;&#x61C9;&#x8A72;&#x662F;&#x5920;&#x7528;&#x3002;&#x4EE5;&#x4E0B;&#x5047;&#x8A2D;&#x4F60;&#x90FD;&#x5DF2;&#x7D93;&#x8A3B;&#x518A;&#x597D;&#x4E86; heroku &#x7684;&#x5E33;&#x865F;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x4F86;&#x8B93;&#x6211;&#x5011;&#x958B;&#x59CB;&#x628A;&#x6211;&#x5011;&#x7684; Project &#x4E1F;&#x4E0A;&#x53BB;&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x5011;&#x5148;&#x8F38;&#x5165;</p>
+<pre><code class="lang-shell">heroku login
+</code></pre>
+<p>terimnal &#x6703;&#x51FA;&#x73FE;&#x8981;&#x8F38;&#x5165;&#x4F60;&#x6240;&#x8A3B;&#x518A;&#x7684;&#x5E33;&#x865F;&#x4EE5;&#x53CA;&#x5BC6;&#x78BC;</p>
+<p>&#x7232;&#x4E86;&#x8B93;&#x7A0B;&#x5F0F;&#x53EF;&#x4EE5;&#x66F4;&#x65B9;&#x4FBF;&#x7684; deploy &#x5230; heroku &#x4E0A;&#x9762;&#xFF0C;&#x6211;&#x5011;&#x8981;&#x5B89;&#x88DD; <code>django-heroku</code> &#x9019;&#x500B; package&#xFF0C;&#x5B83;&#x6703;&#x5E6B;&#x52A9;&#x6211;&#x5011;&#x5B8C;&#x6210;&#x4E00;&#x4E9B;&#x76F8;&#x95DC;&#x7684;&#x8A2D;&#x5B9A;</p>
+<pre><code class="lang-shell">pipenv install django-heroku
+</code></pre>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x6211;&#x5011;&#x5728; blog/settings.py &#x6700;&#x5E95;&#x4E0B;&#x52A0;&#x4E0A;&#x4EE5;&#x4E0B;&#x5169;&#x884C;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> django_heroku
+django_heroku.settings(locals())
+</code></pre>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x5728; blog &#x76EE;&#x9304;&#x5E95;&#x4E0B;&#x65B0;&#x589E;&#x4E00;&#x500B; Procfile&#xFF0C;&#x5167;&#x5BB9;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-shell">web: gunicorn blog.wsgi
+</code></pre>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x6211;&#x5011;&#x8981;&#x521D;&#x59CB;&#x5316; git repository</p>
+<pre><code class="lang-shell">git init
+</code></pre>
+<p>&#x628A;&#x6A94;&#x6848;&#x52A0;&#x5230; git repository &#x7576;&#x4E2D;</p>
+<pre><code class="lang-shell">git add .
+git commit -m &quot;First Commit&quot;
+</code></pre>
+<p>&#x5275;&#x5EFA; heroku app</p>
+<pre><code class="lang-shell">heroku create
+</code></pre>
+<p>&#x628A;&#x4F60;&#x7684; code &#x63A8;&#x5230; heroku &#x4E0A;&#x9762;</p>
+<pre><code class="lang-shell">git push heroku master
+</code></pre>
+<p>&#x5275;&#x5EFA;&#x8CC7;&#x6599;&#x5EAB;</p>
+<pre><code class="lang-shell">heroku run python manage.my migrate
+</code></pre>
+<p>&#x958B;&#x5553;&#x4F60;&#x7684;&#x7DB2;&#x7AD9;</p>
+<pre><code class="lang-shell">heroku open
+</code></pre>
+<p>&#x4F60;&#x6703;&#x770B;&#x5230;&#x985E;&#x4F3C; <code>https://agile-waters-53872.herokuapp.com/</code> &#x9019;&#x6A23;&#x7684; url&#xFF0C;&#x4E0A;&#x9762;&#x8DDF;&#x4F60;&#x7684;&#x7DB2;&#x7AD9;&#x4E00;&#x6A23;&#xFF0C;&#x4E0D;&#x904E;&#x6C92;&#x6709;&#x8CC7;&#x6599;&#x3002;&#x9019;&#x662F;&#x56E0;&#x7232;&#x4F60;&#x5728; local &#x958B;&#x767C;&#x7684;&#x6642;&#x5019;&#x4F7F;&#x7528;&#x7684;&#x8CC7;&#x6599;&#x5EAB;&#x8DDF;&#x9060;&#x7AEF;&#x4E0D;&#x540C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x9023;&#x5230; <code>/create/</code> &#x9019;&#x500B; url &#x5275;&#x5EFA;&#x4F60;&#x7684;&#x6587;&#x7AE0;&#x3002;</p>
+<p>&#x597D;&#x4E86;&#xFF0C;&#x73FE;&#x5728;&#x4F60;&#x5DF2;&#x7D93;&#x628A;&#x4F60;&#x7684;&#x7DB2;&#x7AD9;&#x4E1F;&#x4E0A;&#x53BB;&#x4E86;&#x3002;&#x5982;&#x679C;&#x4E4B;&#x5F8C;&#x4F60;&#x6709;&#x52A0;&#x4EFB;&#x4F55;&#x529F;&#x80FD;&#xFF0C;&#x53EA;&#x8981;&#x8A18;&#x5F97;&#x7528; <code>git commit</code> &#x4EE5;&#x53CA; <code>git push heroku master</code> &#x5C31;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../third_party_app/" class="navigation navigation-prev " aria-label="Previous page: Django 的第三方套件們">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../remark/" class="navigation navigation-next " aria-label="Next page: 這只是開始...">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"把你的 Django Project 丟上雲端","level":"1.13","depth":1,"next":{"title":"這只是開始...","level":"1.14","depth":1,"path":"remark/README.md","ref":"remark/README.md","articles":[]},"previous":{"title":"Django 的第三方套件們","level":"1.12","depth":1,"path":"third_party_app/README.md","ref":"third_party_app/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-312079-14"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"deploy_to_cloud/README.md","mtime":"2018-05-22T02:36:42.653Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-23T07:25:11.266Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
